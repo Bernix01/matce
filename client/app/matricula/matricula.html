@@ -2,14 +2,22 @@
 
 <div class="container">
   <div class="row">
-    <div class=" col-sm-3 pull-right"> Buscar <input type="search" class="form-control"></div>
+    <div class="jumbotron">
+      <h1>Ordenes de matrícula</h1>
+      <p>Para solicitar una matrícula ingrese el formulario.  Si desea saber el estado de su orden de matricula, ingrese el número de orden.</p>
+      <div class="input-group input-group-lg">
+        <input type="text" placeholder="# de orden" class="form-control">
+        <span class="input-group-btn"><button type="button" name="button" class="btn btn-default">Buscar</button></span>
+      </div>
+    </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="mat.login(form)" bs-has>
         <div class="row">
-          <fieldset class="col-sm-12">
-            <legend class="col-sm-12">Datos del estudiante</legend>
+          <div class="col-sm-12">
+          <fieldset >
+            <legend>Datos del estudiante</legend>
             <div class="form-group col-md-5">
               <label>Nombres</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.nombres" required>
@@ -53,8 +61,7 @@
               <br/>
               <div>
                 <label class="checkbox-inline" ng-repeat="fruit in fruits">
-                  <input type="checkbox" name="selectedFruits[]" value="{{fruit.name}}" ng-model="fruit.selected">
-                  {{fruit.name}}
+                  <input type="checkbox" name="selectedFruits[]" value="{{fruit.name}}" ng-model="fruit.selected"> {{fruit.name}}
                 </label>
               </div>
             </div>
@@ -63,7 +70,7 @@
               <label>Institución anterior</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.anteriorInstitucion" required>
             </div>
-
+            <div class="separator"></div>
             <div class="form-group col-sm-12">
               <label>Representante escolar (Nombre completo)</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.representante" required>
@@ -92,9 +99,8 @@
             </div>
           </fieldset>
         </div>
-        <div class="row">
-
-          <fieldset class="col-md-6">
+          <div class="col-md-6">
+          <fieldset >
             <legend>Datos del padre</legend>
             <div class="form-group col-sm-12">
               <label>Nombres</label>
@@ -104,11 +110,11 @@
               <label>Apellidos</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.apellidosPadre" required>
             </div>
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-7">
               <label>Lugar de trabajo</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.lugarTrabajoPadre" required>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-5">
               <label>Cédula</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.ciPadre" required>
             </div>
@@ -121,7 +127,10 @@
               <select ng-model="mat.matricula.nivelPadre" class="form-control" ng-options="values.indexOf(selectedItem) as selectedItem for selectedItem in values"></select>
             </div>
           </fieldset>
-          <fieldset class="col-md-6">
+        </div>
+          <div class=" col-md-6">
+
+          <fieldset>
             <legend>
               Datos de la madre</legend>
             <div class="form-group col-sm-12">
@@ -132,11 +141,11 @@
               <label>Apellidos</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.apellidosMadre" required>
             </div>
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-7">
               <label>Lugar de trabajo</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.lugarTrabajoMadre" required>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-5">
               <label>Cédula</label>
               <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.ciMadre" required>
             </div>
@@ -150,6 +159,8 @@
               <select ng-model="mat.matricula.nivelMadre" class="form-control" ng-options="values.indexOf(selectedItem2) as selectedItem2 for selectedItem2 in values"></select>
             </div>
           </fieldset>
+
+        </div>
         </div>
         <div class="clearfix"></div>
 

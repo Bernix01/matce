@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import OrdenMatricula from '../api/orden_matricula/orden_matricula.model';
 
 Thing.find({}).removeAsync()
   .then(() => {
@@ -55,5 +56,82 @@ User.find({}).removeAsync()
     })
     .then(() => {
       console.log('finished populating users');
+    });
+  });
+
+  OrdenMatricula.find({}).removeAsync().then(()=>{
+    OrdenMatricula.createAsync({
+      personasConvive: [
+        "Padre",
+        "Madre",
+        "Tios/as"
+      ],
+      nombres: "Juan Antonio",
+      apellidos: "Robalino Mancero",
+      lugarNacimiento: "Durán",
+      fechaNacimiento: new Date(),
+      sexo: "M",
+      lugarDomicilio: "Primavera 2",
+      anteriorInstitucion: "Otro colegio",
+      representante: "Andrés Juan",
+      representanteParentesco: "Robalino Toral",
+      representanteCI: "0956145821",
+      telefonosRepresentante: [
+        "+593994349012",
+        "+593224578163"
+      ],
+      nombresMadre: "Juliana Andrea",
+      emailRepresentante: "representante@example.com",
+      nombresPadre: "Andrés Juan",
+      apellidosPadre: "Robalino Toral",
+      lugarTrabajoPadre: "Empresa Inc.",
+      ciPadre: "0956145821",
+      cargoPadre: "Jefe de área",
+      nivelPadre: 1,
+      cargoMadre: "Jefa de área",
+      nivelMadre: 2,
+      ciMadre: "094563213",
+      lugarTrabajoMadre: "Enterprise",
+      apellidosMadre: "Mancero Reyes",
+      nivel: 1,
+      cedula: "0948124578"
+    },
+    {
+      "nombres": "Alejandro Daniel",
+      "apellidos": "Muñoz Rockefeller",
+      "cedula": "0923763184",
+      "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+      "lugarNacimiento": "Ernesto Maldonado",
+      "sexo": "M",
+      "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+      "nivel": 1,
+      "anteriorInstitucion": "Mariscal Sucre",
+      "representante": "Fabrizio David Anchundia Moreira",
+      "representanteParentesco": "Padre",
+      "representanteCI": "0931473755",
+      "emailRepresentante": "fanchundpo@hotmail.clm",
+      "nombresPadre": "Fabrizio David",
+      "apellidosPadre": "Muñoz Ortega",
+      "lugarTrabajoPadre": "Casa",
+      "ciPadre": "0931473755",
+      "cargoPadre": "Jefe",
+      "nivelPadre": 3,
+      "nombresMadre": "Angie Elizabeth",
+      "apellidosMadre": "Rockefeller Ortega",
+      "lugarTrabajoMadre": "Telegrafo",
+      "ciMadre": "0912345677",
+      "cargoMadre": "Jefa",
+      "nivelMadre": 2,
+      "telefonosRepresentante": [
+          "2555425",
+          "0992322685"
+      ],
+      "personasConvive": [
+          "Padre"
+      ],
+      "date": new Date("2016-02-22T20:14:04.893Z"),
+      "active": false
+  }).then(() => {
+      console.log('finished populating ordenes de matricula');
     });
   });

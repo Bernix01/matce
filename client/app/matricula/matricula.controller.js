@@ -67,42 +67,6 @@
           return fruit.name;
         });
       }, true);
-        // this.matricula = {
-        //   "personasConvive": [
-        //     "Padre",
-        //     "Madre",
-        //     "Tios/as"
-        //   ],
-        //   "nombres": "Guillermo Enrique",
-        //   "apellidos": "Guillermo Enrique",
-        //   "lugarNacimiento": "Guillermo Enrique",
-        //   "fechaNacimiento": new Date(),
-        //   "sexo": "M",
-        //   "lugarDomicilio": "fgdgfd",
-        //   "anteriorInstitucion": "Guillermo Enrique",
-        //   "representante": "Guillermo Enrique",
-        //   "representanteParentesco": "Guillermo Enrique",
-        //   "representanteCI": "Guillermo Enrique",
-        //   "telefonosRepresentante": {
-        //     "primary": "+593992345044",
-        //     "alter": "234234"
-        //   },
-        //   "nombresMadre": "fgdgfd",
-        //   "emailRepresentante": "Guillermo@sdfsdf",
-        //   "nombresPadre": "sdfsdf",
-        //   "apellidosPadre": "sdfsdf",
-        //   "lugarTrabajoPadre": "sdfsdf",
-        //   "ciPadre": "sdfsdf",
-        //   "cargoPadre": "sdfsdf",
-        //   "nivelPadre": 1,
-        //   "cargoMadre": "sdfsdf",
-        //   "nivelMadre": 2,
-        //   "ciMadre": "sdfsdf",
-        //   "lugarTrabajoMadre": "sdfsdf",
-        //   "apellidosMadre": "sdfsdf",
-        //   "nivel": 1,
-        //   "cedula": "654654654"
-        // };
     }
 
     login(form) {

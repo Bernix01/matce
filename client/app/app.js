@@ -7,6 +7,7 @@ angular.module('matriculasApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngPageTitle',
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
