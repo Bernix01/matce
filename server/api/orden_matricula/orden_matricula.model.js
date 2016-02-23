@@ -43,18 +43,19 @@ OrdenMatriculaSchema.virtual('nombreCompleto').get(function() {
   return this.nombres +" "+ this.apellidos;
 });
 
-OrdenMatriculaSchema.virtual('nombreCompleto.padre').get(function() {
+OrdenMatriculaSchema.virtual('nombreCompletoPadre').get(function() {
   return this.nombresPadre +" "+ this.apellidosPadre;
 });
 
-OrdenMatriculaSchema.virtual('nombreCompleto.madre').get(function() {
+OrdenMatriculaSchema.virtual('nombreCompletoMadre').get(function() {
   return this.nombresMadre +" "+ this.apellidosMadre;
 });
 
 OrdenMatriculaSchema.pre('save', function(next) {
   var self = this;
+  if(self._numOrden == null){
   self._numOrden = self.nombres.charAt(0)+self.apellidos.charAt(0)+self.nivel+self.date.getMilliseconds();
-
+}
   next();
 });
 

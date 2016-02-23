@@ -68,7 +68,8 @@ export function index(req, res) {
 
 // Gets a single OrdenMatricula from the DB
 export function show(req, res) {
-  OrdenMatricula.findByIdAsync(req.params.id)
+  console.log(req.params.id);
+  OrdenMatricula.findOne({ _numOrden: req.params.id })
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
@@ -95,7 +96,7 @@ export function update(req, res) {
 
 // Deletes a OrdenMatricula from the DB
 export function destroy(req, res) {
-  OrdenMatricula.findByIdAsync(req.params.id)
+  OrdenMatricula.findOne({ _numOrden: req.params.id })
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

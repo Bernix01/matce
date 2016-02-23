@@ -1,0 +1,96 @@
+<navbar></navbar>
+
+<div class="container">
+
+  <div ng-show="detMat.detalleOrden">
+    <h1>Orden de matricula
+      {{detMat.detalleOrden._numOrden}} emitida el {{detMat.detalleOrden.date |  date:'dd/MM/yyyy'}}</h1>
+      <div class="btn-group"  ng-show="detMat.isAdmin()" ><button class="btn btn-default hidden-print" ui-sref="editarMatricula({id: detMat.detalleOrden._numOrden})"> editar </button>
+      <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button><button class="btn btn-danger" ng-click="detMat.borrar()">borrar</button></div>
+    <div>
+      <h2>
+        Estudiante
+      </h2>
+      <h4>
+        <strong>Nombre:</strong>
+        {{detMat.detalleOrden.nombreCompleto}}</h4>
+      <h4>
+        <strong>Fecha de nacimiento:</strong>
+        {{detMat.detalleOrden.fechaNacimiento |  date:'dd/MM/yyyy'}}</h4>
+      <h4>
+        <strong>Lugar de nacimiento:</strong>
+        {{detMat.detalleOrden.lugarNacimiento}}</h4>
+      <h4>
+        <strong>Sexo:</strong>
+        {{detMat.detalleOrden.sexo}}</h4>
+      <h4>
+        <strong>Domicilio:</strong>
+        {{detMat.detalleOrden.lugarDomicilio}}</h4>
+      <h4>
+        <strong>Anterior institución:</strong>
+        {{detMat.detalleOrden.anteriorInstitucion}}</h4>
+      <h4>
+        <strong>Representante:</strong>
+        {{detMat.detalleOrden.representante}}</h4>
+      <h4>
+        <strong>Parentesco:</strong>
+        {{detMat.detalleOrden.representanteParentesco}}</h4>
+      <h4>
+        <strong>Cédula representante:</strong>
+        {{detMat.detalleOrden.representanteCI}}</h4>
+      <h4>
+        <strong>Correo electrónico del representante:</strong>
+        {{detMat.detalleOrden.emailRepresentante}}</h4>
+      <h4>
+        <strong>Cedula:</strong>
+        {{detMat.detalleOrden.cedula}}</h4>
+      <h4>
+        <strong>Nivel al que aplica:</strong>
+        {{nivelesDisponibles[detMat.detalleOrden.nivel]}}</h4>
+    </div>
+        <div>
+          <h2>
+            Padre
+          </h2>
+          <h4>
+            <strong>Nombre:</strong>
+            {{detMat.detalleOrden.nombreCompletoPadre}}</h4>
+          <h4>
+            <strong>Lugar de trabajo:</strong>
+            {{detMat.detalleOrden.lugarTrabajoPadre}}</h4>
+          <h4>
+            <strong>Cedula:</strong>
+            {{detMat.detalleOrden.ciPadre}}</h4>
+          <h4>
+            <strong>Nivel de educación:</strong>
+            {{nivelTitulo[detMat.detalleOrden.nivelPadre]}}</h4>
+        </div>
+        <div>
+          <h2>
+            Madre
+          </h2>
+          <h4>
+            <strong>Nombre:</strong>
+            {{detMat.detalleOrden.nombreCompletoMadre}}</h4>
+          <h4>
+            <strong>Lugar de trabajo:</strong>
+            {{detMat.detalleOrden.lugarTrabajoMadre}}</h4>
+          <h4>
+            <strong>Cedula:</strong>
+            {{detMat.detalleOrden.ciMadre}}</h4>
+          <h4>
+            <strong>Nivel de educación:</strong>
+            {{nivelTitulo[detMat.detalleOrden.nivelMadre]}}</h4>
+        </div>
+  </div>
+  <div class="jumbotron" ng-hide="detMat.detalleOrden">
+    <h1>Orden inexistente. :-(</h1>
+    <p>
+      Intenta con otro número de orden.
+    </p>
+    <div class="input-group input-group-lg">
+      <input type="text" placeholder="# de orden" class="form-control" ng-model="id_buscar">
+      <span class="input-group-btn"><button type="button" name="button" class="btn btn-default" ui-sref="detalle({id: id_buscar})">Buscar</button></span>
+    </div>
+  </div>
+</div>

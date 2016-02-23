@@ -61,6 +61,7 @@ User.find({}).removeAsync()
 
   OrdenMatricula.find({}).removeAsync().then(()=>{
     OrdenMatricula.createAsync({
+      _numOrden: "JR12345",
       personasConvive: [
         "Padre",
         "Madre",
