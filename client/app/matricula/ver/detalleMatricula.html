@@ -1,12 +1,10 @@
-<navbar></navbar>
-
 <div class="container">
 
   <div ng-show="detMat.detalleOrden">
     <h1>Orden de matricula
       {{detMat.detalleOrden._numOrden}} emitida el {{detMat.detalleOrden.date |  date:'dd/MM/yyyy'}}</h1>
       <div class="btn-group"  ng-show="detMat.isAdmin()" ><button class="btn btn-default hidden-print" ui-sref="editarMatricula({id: detMat.detalleOrden._numOrden})"> editar </button>
-      <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button><button class="btn btn-danger hidden-print" ng-click="detMat.borrar()">borrar</button></div>
+      <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button><button class="btn btn-danger  hidden-print" ng-click="detMat.borrar()">borrar</button></div>
     <div>
       <h2>
         Estudiante
@@ -83,14 +81,10 @@
             {{nivelTitulo[detMat.detalleOrden.nivelMadre]}}</h4>
         </div>
   </div>
-  <div class="jumbotron" ng-hide="detMat.detalleOrden">
-    <h1>Orden inexistente. :-(</h1>
+  <div ng-hide="detMat.detalleOrden">
     <p>
-      Intenta con otro número de orden.
+      No se ha encontrado ningún resultado.
     </p>
-    <div class="input-group input-group-lg">
-      <input type="text" placeholder="# de orden" class="form-control" ng-model="id_buscar">
-      <span class="input-group-btn"><button type="button" name="button" class="btn btn-default" ui-sref="detalle({id: id_buscar})">Buscar</button></span>
-    </div>
+
   </div>
 </div>

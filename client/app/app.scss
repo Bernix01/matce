@@ -2,6 +2,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
+@import '../bower_components/bootswatch-dist/css/bootstrap.css';
 
 /**
  * App-wide Styles
@@ -18,8 +19,8 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 // injector
 @import 'admin/admin.scss';
 @import 'main/main.scss';
-@import 'matricula/crearMatricula/crearMatricula.scss';
-@import 'matricula/editarMatricula/editarMatricula.scss';
+@import 'matricula/crear/crearMatricula.scss';
+@import 'matricula/editar/editarMatricula.scss';
 @import 'matricula/matricula.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';

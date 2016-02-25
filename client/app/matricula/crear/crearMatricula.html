@@ -1,5 +1,3 @@
-<navbar></navbar>
-
 <div class="container">
   <!-- <div class="row">
     <div class="jumbotron">
@@ -13,6 +11,7 @@
   </div> -->
   <div class="row">
     <div class="col-sm-12">
+      <a href="/matricula"><h4>volver<h4> </a>
       <h1>Para solicitar una orden de matrícula llene el siguiente formulario.</h1>
       <br>
     </div>
@@ -34,7 +33,7 @@
                 <input type="text" name="apellidos" class="form-control" ng-model="mat.matricula.apellidos" required>
               </div>
               <div class="form-group col-md-3">
-                <label>C.I.</label>
+                <label>Cédula de identidad</label>
                 <input type="text" name="ci" class="form-control" ng-model="mat.matricula.cedula" required>
               </div>
               <div class="form-group col-md-3">
@@ -90,20 +89,22 @@
               </div>
 
               <div class="form-group col-sm-3">
-                <label>C.I.</label>
+                <label>Cédula de ciudadanía</label>
                 <input type="" name="nombres" class="form-control" ng-model="mat.matricula.representanteCI" required>
               </div>
 
               <div class="form-group col-sm-3">
                 <label>Telefonos</label>
-                <input type="tel" name="nombres" class="form-control" ng-model="mat.matricula.telefonosRepresentante.primary" required>
+                <input type="tel" name="nombres" class="form-control" ng-model="mat.matricula.telefonosRepresentanteP" required>
                 <br/>
-                <input type="tel" name="nombres" placeholder="Opcional" class="form-control" ng-model="mat.matricula.telefonosRepresentante.alter">
+                <input type="tel" name="nombres" placeholder="Opcional" class="form-control" ng-model="mat.matricula.telefonosRepresentantA">
               </div>
 
               <div class="form-group col-sm-3">
                 <label>Correo electrónico</label>
-                <input type="email" name="nombres" class="form-control" ng-model="mat.matricula.emailRepresentante" required>
+                <input type="email" name="nombres" class="form-control" ng-model="mat.matricula.emailRepresentanteP" required>
+                <br/>
+                <input type="email" name="nombres" class="form-control" ng-model="mat.matricula.emailRepresentanteA" >
               </div>
             </fieldset>
           </div>
@@ -123,7 +124,7 @@
                 <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.lugarTrabajoPadre" required>
               </div>
               <div class="form-group col-md-5">
-                <label>Cédula</label>
+                <label>Cédula de ciudadanía</label>
                 <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.ciPadre" required>
               </div>
               <div class="form-group col-md-7">
@@ -154,7 +155,7 @@
                 <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.lugarTrabajoMadre" required>
               </div>
               <div class="form-group col-md-5">
-                <label>Cédula</label>
+                <label>Cédula de ciudadanía</label>
                 <input type="text" name="nombres" class="form-control" ng-model="mat.matricula.ciMadre" required>
               </div>
               <div class="form-group col-md-7">

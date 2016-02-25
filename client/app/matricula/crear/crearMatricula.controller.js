@@ -2,15 +2,15 @@
 
 (function() {
 
-  class EditarMatriculaCtrl {
+  class CrearMatriculaCtrl {
 
-    constructor($http, $state, $stateParams, socket, $scope, appConfig) {
+    constructor($http, $state, $scope, appConfig) {
       $scope.nivelTitulo = appConfig.nivelTitulo;
       var self = this;
       this.matricula = {};
       this.errors = {};
       this.submitted = false;
-      this.$state = $state;
+
       this.$http = $http;
       this.$state = $state;
       this.date = Date.now();
@@ -57,44 +57,23 @@
           return fruit.name;
         });
       }, true);
-      $http.get('/api/ordenMatriculas/' + $stateParams.id).then(response => {
-        var tmp = response.data;
-        tmp.fechaNacimiento = new Date(tmp.fechaNacimiento);
-        var telf = {
-          primary: tmp.telefonosRepresentante[0],
-          alter: tmp.telefonosRepresentante.size === 2 ? tmp.telefonosRepresentante[1] : null
-        }
-        tmp.telefonosRepresentante = telf;
-        this.matricula = tmp;
-        console.log(this.matricula);
-        socket.syncUpdates('matricula', this.matricula);
-      });
     }
 
     login(form) {
       this.submitted = true;
-      var self = this;
 
       if (form.$valid) {
-        var tels = [
-          this.matricula.telefonosRepresentante.primary
-        ];
-        if (this.matricula.telefonosRepresentante.alter) {
-          tels.push(this.matricula.telefonosRepresentante.alter);
-        }
-        this.matricula.telefonosRepresentante = tels;
-        console.log(this.matricula);
-        this.$http.put('/api/ordenMatriculas/'+this.matricula._id, this.matricula).then(function cb(response) {
-          alert("Orden actualizada con éxito!");
-          self.$state.go('detalle',{ id: self.matricula._numOrden});
+        this.$http.post('/api/ordenMatriculas', this.matricula).then(function cb(response) {
+          this.matricula = response.data;
         }, function errcb(response) {
           console.log(response);
         });
+        document.getElementById("form").reset();
       }
     }
   }
 
   angular.module('matriculasApp')
-    .controller('EditarMatriculaCtrl', EditarMatriculaCtrl);
+    .controller('CrearMatriculaCtrl', CrearMatriculaCtrl);
 
 })();
