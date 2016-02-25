@@ -75,14 +75,15 @@ User.find({}).removeAsync()
       lugarDomicilio: "Primavera 2",
       anteriorInstitucion: "Otro colegio",
       representante: "Andrés Juan",
-      representanteParentesco: "Robalino Toral",
+      representanteParentesco: "Tio",
       representanteCI: "0956145821",
-      telefonosRepresentante: [
+      telefonosRepresentanteP:
         "+593994349012",
+        telefonosRepresentanteA:
         "+593224578163"
-      ],
+      ,
       nombresMadre: "Juliana Andrea",
-      emailRepresentante: "representante@example.com",
+      emailRepresentanteP: "representante@example.com",
       nombresPadre: "Andrés Juan",
       apellidosPadre: "Robalino Toral",
       lugarTrabajoPadre: "Empresa Inc.",
@@ -110,7 +111,7 @@ User.find({}).removeAsync()
       "representante": "Fabrizio David Anchundia Moreira",
       "representanteParentesco": "Padre",
       "representanteCI": "0931473755",
-      "emailRepresentante": "fanchundpo@hotmail.clm",
+      "emailRepresentanteP": "fanchundpo@hotmail.clm",
       "nombresPadre": "Fabrizio David",
       "apellidosPadre": "Muñoz Ortega",
       "lugarTrabajoPadre": "Casa",
@@ -123,10 +124,11 @@ User.find({}).removeAsync()
       "ciMadre": "0912345677",
       "cargoMadre": "Jefa",
       "nivelMadre": 2,
-      "telefonosRepresentante": [
-          "2555425",
-          "0992322685"
-      ],
+      telefonosRepresentanteP:
+        "+593994349012",
+        telefonosRepresentanteA:
+        "+593224578163"
+      ,
       "personasConvive": [
           "Padre"
       ],

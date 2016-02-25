@@ -2,14 +2,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="jumbotron">
+    <div class="jumbotron" ng-show="mat.checkHome()">
       <h1>Ordenes de matrícula</h1>
-      <p>Para solicitar una orden matrícula llene el <a ui-sref="crearMatricula"><strong>formulario</strong></a>.  Si desea saber el estado de su orden de matricula, ingrese el número de orden.</p>
+      <p>Para solicitar una orden matrícula llene el <a ui-sref="matricula.crearMatricula"><strong>formulario</strong></a>.  Si desea saber el estado de su orden de matricula, ingrese el número de orden.</p>
       <div class="input-group input-group-lg">
         <input type="text" placeholder="# de orden" class="form-control" ng-model="id_buscar">
-        <span class="input-group-btn"><button type="button" name="button" class="btn btn-default" ui-sref="detalle({id: id_buscar})">Buscar</button></span>
+        <span class="input-group-btn"><button type="button" name="button" class="btn btn-default" ui-sref="matricula.detalleMatricula({id: id_buscar})">Buscar</button></span>
       </div>
     </div>
+    <div ui-view=""></div>
   </div>
-  <hr>
 </div>
+<footer></footer>

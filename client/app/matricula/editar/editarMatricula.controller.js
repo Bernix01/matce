@@ -2,15 +2,15 @@
 
 (function() {
 
-  class CrearMatriculaCtrl {
+  class EditarMatriculaCtrl {
 
-    constructor($http, $state, $scope, appConfig) {
+    constructor($http, $state, $stateParams, socket, $scope, appConfig) {
       $scope.nivelTitulo = appConfig.nivelTitulo;
       var self = this;
       this.matricula = {};
       this.errors = {};
       this.submitted = false;
-
+      this.$state = $state;
       this.$http = $http;
       this.$state = $state;
       this.date = Date.now();
@@ -57,30 +57,29 @@
           return fruit.name;
         });
       }, true);
+      $http.get('/api/ordenMatriculas/' + $stateParams.id).then(response => {
+        this.matricula = response.data;
+        socket.syncUpdates('ordenMatricula', this.matricula);
+        this.matricula.fechaNacimiento = new Date(this.matricula.fechaNacimiento);
+      });
     }
 
     login(form) {
       this.submitted = true;
+      var self = this;
 
       if (form.$valid) {
-        var tels = [
-          this.matricula.telefonosRepresentante.primary
-        ];
-        if (this.matricula.telefonosRepresentante.alter) {
-          tels.push(this.matricula.telefonosRepresentante.alter);
-        }
-        this.matricula.telefonosRepresentante = tels;
-        this.$http.post('/api/ordenMatriculas', this.matricula).then(function cb(response) {
-          this.matricula = response.data;
+        this.$http.put('/api/ordenMatriculas/'+this.matricula._id, this.matricula).then(function cb(response) {
+          alert("Orden actualizada con éxito!");
+          self.$state.go('detalle',{ id: self.matricula._numOrden});
         }, function errcb(response) {
           console.log(response);
         });
-        document.getElementById("form").reset();
       }
     }
   }
 
   angular.module('matriculasApp')
-    .controller('CrearMatriculaCtrl', CrearMatriculaCtrl);
+    .controller('EditarMatriculaCtrl', EditarMatriculaCtrl);
 
 })();

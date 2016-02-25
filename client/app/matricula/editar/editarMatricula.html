@@ -1,5 +1,3 @@
-<navbar></navbar>
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -17,7 +15,7 @@
                 <input type="text" name="apellidos" class="form-control" ng-model="editMat.matricula.apellidos" required>
               </div>
               <div class="form-group col-md-3">
-                <label>C.I.</label>
+                <label>Cédula de identidad</label>
                 <input type="text" name="ci" class="form-control" ng-model="editMat.matricula.cedula" required>
               </div>
               <div class="form-group col-md-3">
@@ -73,20 +71,22 @@
               </div>
 
               <div class="form-group col-sm-3">
-                <label>C.I.</label>
+                <label>Cédula de ciudadanía</label>
                 <input type="" name="nombres" class="form-control" ng-model="editMat.matricula.representanteCI" required>
               </div>
 
               <div class="form-group col-sm-3">
                 <label>Telefonos</label>
-                <input type="tel" name="nombres" class="form-control" ng-model="editMat.matricula.telefonosRepresentante.primary" required>
+                <input type="tel" name="nombres" class="form-control" ng-model="editMat.matricula.telefonosRepresentanteP" required>
                 <br/>
-                <input type="tel" name="nombres" placeholder="Opcional" class="form-control" ng-model="editMat.matricula.telefonosRepresentante.alter">
+                <input type="tel" name="nombres" placeholder="Opcional" class="form-control" ng-model="editMat.matricula.telefonosRepresentanteA">
               </div>
 
               <div class="form-group col-sm-3">
                 <label>Correo electrónico</label>
-                <input type="email" name="nombres" class="form-control" ng-model="editMat.matricula.emailRepresentante" required>
+                <input type="email" name="nombres" class="form-control" ng-model="editMat.matricula.emailRepresentanteP" required>
+                <br>
+                <input type="email" name="nombres" class="form-control" ng-model="editMat.matricula.emailRepresentanteA" >
               </div>
             </fieldset>
           </div>
@@ -106,7 +106,7 @@
                 <input type="text" name="nombres" class="form-control" ng-model="editMat.matricula.lugarTrabajoPadre" required>
               </div>
               <div class="form-group col-md-5">
-                <label>Cédula</label>
+                <label>Cédula de ciudadanía</label>
                 <input type="text" name="nombres" class="form-control" ng-model="editMat.matricula.ciPadre" required>
               </div>
               <div class="form-group col-md-7">
@@ -137,7 +137,7 @@
                 <input type="text" name="nombres" class="form-control" ng-model="editMat.matricula.lugarTrabajoMadre" required>
               </div>
               <div class="form-group col-md-5">
-                <label>Cédula</label>
+                <label>Cédula de ciudadanía</label>
                 <input type="text" name="nombres" class="form-control" ng-model="editMat.matricula.ciMadre" required>
               </div>
               <div class="form-group col-md-7">

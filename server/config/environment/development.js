@@ -6,7 +6,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://192.168.1.105/cedi'
+    uri: 'mongodb://GUILLERMO/cedi'
   },
 
   // Seed database on startup

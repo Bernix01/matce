@@ -13,19 +13,21 @@ angular.module('matriculasApp')
         url: '/logout?referrer',
         referrer: 'main',
         template: '',
-        controller: function($state, Auth) {
+        controller: function($state, Auth, $rootScope) {
           var referrer = $state.params.referrer ||
                           $state.current.referrer ||
                           'main';
           Auth.logout();
-          $state.go(referrer);
+          console.log();
+          $state.go(referrer, $rootScope.returnToStateParams);
         }
       })
       .state('signup', {
         url: '/signup',
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        authenticate: 'admin'
       })
       .state('settings', {
         url: '/settings',
@@ -36,9 +38,11 @@ angular.module('matriculasApp')
       });
   })
   .run(function($rootScope) {
-    $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {
+    $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current, currentParams) {
       if (next.name === 'logout' && current && current.name && !current.authenticate) {
         next.referrer = current.name;
+        console.log(currentParams);
+        $rootScope.returnToStateParams = currentParams;
       }
     });
   });
