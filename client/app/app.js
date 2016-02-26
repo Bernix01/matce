@@ -13,7 +13,8 @@ angular.module('matriculasApp', [
     'ui.bootstrap',
     'validation.match'
   ])
-  .config(function($urlRouterProvider, $locationProvider) {
+  .config(function($urlRouterProvider, $locationProvider, $compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
     $urlRouterProvider
       .otherwise('/404.html');
     $urlRouterProvider.when("/admin", "/admin/users");
