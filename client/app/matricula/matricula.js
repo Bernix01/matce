@@ -18,13 +18,13 @@ angular.module('matriculasApp')
         controller: 'CrearMatriculaCtrl'
       })
       .state('matricula.detalleMatricula', {
-        url: '/detalle/{id}',
+        url: '/{id}/detalle',
         templateUrl: 'app/matricula/ver/detalleMatricula.html',
         controller: 'DetalleMatriculaCtrl',
         controllerAs: 'detMat'
       })
       .state('matricula.editarMatricula', {
-        url: '/editar',
+        url: '/{id}/editar',
         templateUrl: 'app/matricula/editar/editarMatricula.html',
         controller: 'EditarMatriculaCtrl',
         controllerAs: 'editMat',

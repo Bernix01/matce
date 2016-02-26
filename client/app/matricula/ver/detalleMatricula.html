@@ -3,7 +3,7 @@
   <div ng-show="detMat.detalleOrden">
     <h1>Orden de matricula
       {{detMat.detalleOrden._numOrden}} emitida el {{detMat.detalleOrden.date |  date:'dd/MM/yyyy'}}</h1>
-      <div class="btn-group"  ng-show="detMat.isAdmin()" ><button class="btn btn-default hidden-print" ui-sref="editarMatricula({id: detMat.detalleOrden._numOrden})"> editar </button>
+      <div class="btn-group"  ng-show="detMat.isAdmin()" ><button class="btn btn-default hidden-print" ui-sref="matricula.editarMatricula({id: detMat.detalleOrden._numOrden})"> editar </button>
       <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button><button class="btn btn-danger  hidden-print" ng-click="detMat.borrar()">borrar</button></div>
     <div>
       <h2>
@@ -44,7 +44,7 @@
         {{detMat.detalleOrden.cedula}}</h4>
       <h4>
         <strong>Nivel al que aplica:</strong>
-        {{nivelesDisponibles[detMat.detalleOrden.nivel]}}</h4>
+        {{detMat.detalleOrden.nivelAplica}}</h4>
     </div>
         <div>
           <h2>

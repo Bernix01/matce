@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
+import config from '../../config/environment/shared';
 
 var OrdenMatriculaSchema = new mongoose.Schema({
   active: {type: Boolean, default: false},
@@ -51,6 +52,10 @@ OrdenMatriculaSchema.virtual('nombreCompletoPadre').get(function() {
 
 OrdenMatriculaSchema.virtual('nombreCompletoMadre').get(function() {
   return this.nombresMadre +" "+ this.apellidosMadre;
+});
+
+OrdenMatriculaSchema.virtual('nivelAplica').get(function() {
+  return config.nivelesDisponibles[this.nivel] || "nope";
 });
 
 OrdenMatriculaSchema.pre('save', function(next) {

@@ -62,6 +62,9 @@
         socket.syncUpdates('ordenMatricula', this.matricula);
         this.matricula.fechaNacimiento = new Date(this.matricula.fechaNacimiento);
       });
+      $scope.$on('$destroy', function() {
+        socket.unsyncUpdates('ordenMatricula');
+      });
     }
 
     login(form) {

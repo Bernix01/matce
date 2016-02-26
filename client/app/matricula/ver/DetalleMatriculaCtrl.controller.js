@@ -5,7 +5,6 @@
   class DetalleMatriculaCtrl {
     constructor($http, $scope, $state, $stateParams, socket, appConfig, Auth) {
       $scope.nivelTitulo = appConfig.nivelTitulo;
-      $scope.nivelesDisponibles = appConfig.nivelesDisponibles;
       this.isAdmin = Auth.isAdmin;
       this.$stateParams = $stateParams;
       this.$http = $http;
@@ -17,6 +16,9 @@
           self.detalleOrden = newArticle;
         });
 
+      });
+      $scope.$on('$destroy', function() {
+        socket.unsyncUpdates('ordenMatricula');
       });
     }
 

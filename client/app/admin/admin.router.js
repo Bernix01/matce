@@ -9,5 +9,15 @@ angular.module('matriculasApp.admin')
         controller: 'AdminController',
         controllerAs: 'admin',
         authenticate: 'admin'
+      }).state('admin.users', {
+        url: '/users',
+        templateUrl: 'app/admin/users/users.html',
+        controller: 'UsersCtrl',
+        controllerAs: 'vm'
+      }).state('admin.matriculas', {
+        url: '/matriculas',
+        templateUrl: 'app/admin/matriculas/matriculas.html',
+        controller: 'MatriculasCtrl',
+        controllerAs: 'vm'
       });
   });

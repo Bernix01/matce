@@ -1,14 +1,52 @@
 <navbar></navbar>
 
 <div class="container">
-  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group user-list">
-    <li class="list-group-item" ng-repeat="user in admin.users">
-	    <div class="user-info">
-	        <strong>{{user.name}}</strong><br>
-	        <span class="text-muted">{{user.email}}</span>
-	    </div>
-        <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
-    </li>
-  </ul>
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="assets/images/avatar_default.png" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{admin.getCurrentUser().name}}
+					</div>
+					<div class="profile-usertitle-job">
+						{{admin.getCurrentUser().role}}
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">Follow</button>
+					<button type="button" class="btn btn-danger btn-sm">Message</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li  ng-class="admin.$state.current.name === 'admin.users' ? 'active' : ''">
+							<a ui-sref="admin.users">
+							<i class="fa fa-user"></i>
+							Usuarios </a>
+						</li>
+						<li ng-class="admin.$state.current.name === 'admin.matriculas' ? 'active' : ''">
+							<a ui-sref="admin.matriculas">
+							<i class="fa fa-file-text"></i>
+							Matriculas </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content" ui-view="">
+
+            </div>
+		</div>
+	</div>
 </div>

@@ -613,8 +613,8 @@ module.exports = function (grunt) {
         options: {
           transform: function(filePath) {
             var yoClient = grunt.config.get('yeoman.client');
-            filePath = filePath.replace('/' + yoClient + '/app/', '');
             filePath = filePath.replace('/' + yoClient + '/components/', '../components/');
+            filePath = filePath.replace('/' + yoClient + '/app/', '');
             return '@import \'' + filePath + '\';';
           },
           starttag: '// injector',

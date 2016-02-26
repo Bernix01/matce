@@ -15,8 +15,8 @@ angular.module('matriculasApp')
         template: '',
         controller: function($state, Auth, $rootScope) {
           var referrer = $state.params.referrer ||
-                          $state.current.referrer ||
-                          'main';
+            $state.current.referrer ||
+            'main';
           Auth.logout();
           console.log();
           $state.go(referrer, $rootScope.returnToStateParams);
@@ -37,12 +37,16 @@ angular.module('matriculasApp')
         authenticate: true
       });
   })
-  .run(function($rootScope) {
+  .run(function($rootScope, $state) {
     $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current, currentParams) {
       if (next.name === 'logout' && current && current.name && !current.authenticate) {
         next.referrer = current.name;
         console.log(currentParams);
         $rootScope.returnToStateParams = currentParams;
+      }
+      if (next.name === "admin") {
+        event.preventDefault();
+        $state.go('admin.users');
       }
     });
   });
