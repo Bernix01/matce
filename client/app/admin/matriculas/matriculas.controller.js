@@ -17,6 +17,9 @@
       $scope.filter2 = function (matricula,input) {
         return self.nivelesDisponibles.indexOf(input) === matricula.nivel;
       }
+      $scope.currentPage = 1;
+      $scope.entryLimit = 1;
+      $scope.noOfPages= 5;
     }
 
     deleteMatricula(matricula) {
