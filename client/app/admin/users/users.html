@@ -1,9 +1,15 @@
+<a ui-sref="signup" class="add pull-right" alt="Agregar usuario.">
+  <i class="fa fa-plus fa-2x"></i>
+</a>
+<div class="clearfix"></div>
 <ul class="list-group user-list">
   <li class="list-group-item" ng-repeat="user in vm.users">
     <div class="user-info">
-        <strong>{{user.name}}</strong><br>
-        <span class="text-muted">{{user.email}}</span>
+      <strong>{{user.name}}</strong><br>
+      <span class="text-muted">{{user.email}}</span>
     </div>
-      <a ng-click="vm.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+    <a ng-click="vm.delete(user)" class="trash">
+      <span class="fa fa-trash fa-2x"></span>
+    </a>
   </li>
 </ul>

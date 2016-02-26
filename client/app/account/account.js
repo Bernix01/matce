@@ -27,7 +27,7 @@ angular.module('matriculasApp')
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupController',
         controllerAs: 'vm',
-        authenticate: 'admin'
+        authenticate: 'administrador'
       })
       .state('settings', {
         url: '/settings',
@@ -46,7 +46,7 @@ angular.module('matriculasApp')
       }
       if (next.name === "admin") {
         event.preventDefault();
-        $state.go('admin.users');
+        $state.go('admin.matriculas');
       }
     });
   });

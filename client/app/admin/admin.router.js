@@ -8,16 +8,18 @@ angular.module('matriculasApp.admin')
         templateUrl: 'app/admin/admin.html',
         controller: 'AdminController',
         controllerAs: 'admin',
-        authenticate: 'admin'
+        authenticate: 'secretaria'
       }).state('admin.users', {
         url: '/users',
         templateUrl: 'app/admin/users/users.html',
         controller: 'UsersCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        authenticate: 'administrador'
       }).state('admin.matriculas', {
         url: '/matriculas',
         templateUrl: 'app/admin/matriculas/matriculas.html',
         controller: 'MatriculasCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        authenticate: 'secretaria'
       });
   });

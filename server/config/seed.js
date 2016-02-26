@@ -49,10 +49,16 @@ User.find({}).removeAsync()
       password: 'test'
     }, {
       provider: 'local',
-      role: 'admin',
+      role: 'administrador',
       name: 'Admin',
       email: 'admin@example.com',
       password: 'admin'
+    }, {
+      provider: 'local',
+      role: 'secretaria',
+      name: 'Secretaria',
+      email: 'secretaria@example.com',
+      password: 'secretaria'
     })
     .then(() => {
       console.log('finished populating users');
@@ -134,7 +140,1043 @@ User.find({}).removeAsync()
       ],
       "date": new Date("2016-02-22T20:14:04.893Z"),
       "active": false
-  }).then(() => {
+  },
+  {
+    "nombres": "Alejandro Daniel",
+    "apellidos": "Muñoz Rockefeller",
+    "cedula": "0923763184",
+    "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+    "lugarNacimiento": "Ernesto Maldonado",
+    "sexo": "M",
+    "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+    "nivel": 1,
+    "anteriorInstitucion": "Mariscal Sucre",
+    "representante": "Fabrizio David Anchundia Moreira",
+    "representanteParentesco": "Padre",
+    "representanteCI": "0931473755",
+    "emailRepresentanteP": "fanchundpo@hotmail.clm",
+    "nombresPadre": "Fabrizio David",
+    "apellidosPadre": "Muñoz Ortega",
+    "lugarTrabajoPadre": "Casa",
+    "ciPadre": "0931473755",
+    "cargoPadre": "Jefe",
+    "nivelPadre": 3,
+    "nombresMadre": "Angie Elizabeth",
+    "apellidosMadre": "Rockefeller Ortega",
+    "lugarTrabajoMadre": "Telegrafo",
+    "ciMadre": "0912345677",
+    "cargoMadre": "Jefa",
+    "nivelMadre": 2,
+    telefonosRepresentanteP:
+      "+593994349012",
+      telefonosRepresentanteA:
+      "+593224578163"
+    ,
+    "personasConvive": [
+        "Padre"
+    ],
+    "date": new Date("2016-02-22T20:14:04.893Z"),
+    "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+},
+{
+  "nombres": "Alejandro Daniel",
+  "apellidos": "Muñoz Rockefeller",
+  "cedula": "0923763184",
+  "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
+  "lugarNacimiento": "Ernesto Maldonado",
+  "sexo": "M",
+  "lugarDomicilio": "Cdla. Los Alames Mz 218 V 17",
+  "nivel": 1,
+  "anteriorInstitucion": "Mariscal Sucre",
+  "representante": "Fabrizio David Anchundia Moreira",
+  "representanteParentesco": "Padre",
+  "representanteCI": "0931473755",
+  "emailRepresentanteP": "fanchundpo@hotmail.clm",
+  "nombresPadre": "Fabrizio David",
+  "apellidosPadre": "Muñoz Ortega",
+  "lugarTrabajoPadre": "Casa",
+  "ciPadre": "0931473755",
+  "cargoPadre": "Jefe",
+  "nivelPadre": 3,
+  "nombresMadre": "Angie Elizabeth",
+  "apellidosMadre": "Rockefeller Ortega",
+  "lugarTrabajoMadre": "Telegrafo",
+  "ciMadre": "0912345677",
+  "cargoMadre": "Jefa",
+  "nivelMadre": 2,
+  telefonosRepresentanteP:
+    "+593994349012",
+    telefonosRepresentanteA:
+    "+593224578163"
+  ,
+  "personasConvive": [
+      "Padre"
+  ],
+  "date": new Date("2016-02-22T20:14:04.893Z"),
+  "active": false
+}).then(() => {
       console.log('finished populating ordenes de matricula');
     });
   });

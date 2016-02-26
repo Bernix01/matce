@@ -28,6 +28,6 @@ angular.module('matriculasApp')
         templateUrl: 'app/matricula/editar/editarMatricula.html',
         controller: 'EditarMatriculaCtrl',
         controllerAs: 'editMat',
-        authenticate: 'admin'
+        authenticate: 'secretaria'
       });
   });

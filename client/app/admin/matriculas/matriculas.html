@@ -1,17 +1,28 @@
-
-<label>Buscar: <input class="form-control" ng-model="filtro"></label>
-<hr>
+<div class="row">
+<div class="form-group col-md-3 hidden-print">
+  <label >Buscar: </label>
+<input class="form-control" ng-model="filtro">
+</div>
+  <div class="form-group col-md-3 hidden-print">
+    <label>Resultados por página</label>
+    <select class="form-control" ng-model="entryLimit" value="10">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="40">40</option>
+      <option value="{{vm.matriculas.length}}">Todos</option>
+    </select>
+  </div>
+</div>
 <ul class="list-group user-list">
   <li class="list-group-item" ng-repeat="matricula in vm.matriculas | filter: filtro | startFrom: (currentPage-1)*entryLimit | limitTo:entryLimit">
     <div class="user-info">
-        <strong>{{matricula.nombres}}</strong><br>
+        <strong>{{matricula.nombreCompleto}}</strong><br>
         <span class="text-muted">{{matricula.nivelAplica}}</span>
     </div>
-      <a ui-sref="matricula.detalleMatricula({id: matricula._numOrden})" class="view"><span class="fa fa-eye fa-2x"></span></a>
+      <a ui-sref="matricula.detalleMatricula({id: matricula._numOrden})" class="view hidden-print"><span class="fa fa-eye fa-2x"></span></a>
 
-        <a ui-sref="matricula.editarMatricula({id: matricula._numOrden})" class="view"><span class="fa fa-pencil fa-2x"></span></a>
-      <a ng-click="vm.deleteMatricula(matricula)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+        <a ui-sref="matricula.editarMatricula({id: matricula._numOrden})" class="view hidden-print"><span class="fa fa-pencil fa-2x"></span></a>
+      <a ng-click="vm.deleteMatricula(matricula)" class="trash  hidden-print"><span class="fa fa-trash fa-2x"></span></a>
   </li>
-
-  <pagination page="currentPage" max-size="noOfPages" total-items= "(vm.matriculas | filter: filtro).length" items-per-page="entryLimit" num-Pages="numPages"></pagination>
 </ul>
+<pagination page="currentPage" class="hidden-print" ng-model="currentPage" total-items= "(vm.matriculas |filter: filtro).length" items-per-page="entryLimit"></pagination>
