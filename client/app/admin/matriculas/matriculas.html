@@ -1,0 +1,14 @@
+
+<label>Buscar: <input class="form-control" ng-model="filtro"></label>
+<ul class="list-group user-list">
+  <li class="list-group-item" ng-repeat="matricula in vm.matriculas | filter: filtro">
+    <div class="user-info">
+        <strong>{{matricula.nombres}}</strong><br>
+        <span class="text-muted">{{matricula.nivelAplica}}</span>
+    </div>
+      <a ui-sref="matricula.detalleMatricula({id: matricula._numOrden})" class="view"><span class="fa fa-eye fa-2x"></span></a>
+
+        <a ui-sref="matricula.editarMatricula({id: matricula._numOrden})" class="view"><span class="fa fa-pencil fa-2x"></span></a>
+      <a ng-click="vm.deleteMatricula(matricula)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+  </li>
+</ul>
