@@ -12,6 +12,9 @@
       <h4>
         <strong>Nombre:</strong>
         {{detMat.detalleOrden.nombreCompleto}}</h4>
+        <h4>
+          <strong>Cancelado:</strong>
+          {{detMat.detalleOrden.active ? 'Sí' : 'No'}}</h4>
       <h4>
         <strong>Fecha de nacimiento:</strong>
         {{detMat.detalleOrden.fechaNacimiento |  date:'dd/MM/yyyy'}}</h4>
