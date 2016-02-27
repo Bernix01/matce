@@ -4,7 +4,16 @@
 angular.module('matriculasApp')
   .factory('socket', function(socketFactory) {
     // socket.io now auto-configures its connection when we ommit a connection url
-    var ioSocket = io('', {
+    var socketAddress = '';
+    if (location.hostname !== 'localhost') {
+      // For OpenShift Deployment socket connection
+      if (location.protocol === 'https:') {
+        socketAddress = 'wss://' + location.hostname + ':8443';
+      } else {
+        socketAddress = 'ws://' + location.hostname + ':8000';
+      }
+    }
+    var ioSocket = io(socketAddress, {
       // Send auth token on connection, you will need to DI the Auth service above
       // 'query': 'token=' + Auth.getToken()
       path: '/socket.io-client'
