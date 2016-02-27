@@ -2,7 +2,7 @@
 
 exports = module.exports = {
   // List of user roles
-  userRoles: ['guest', 'user', 'admin'],
+  userRoles: ['usuario', 'secretaria', 'administrador'],
   nivelTitulo: [
       'Primer nivel',
       'Segundo nivel',

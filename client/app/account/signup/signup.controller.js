@@ -7,9 +7,10 @@ class SignupController {
   submitted = false;
   //end-non-standard
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state, appConfig) {
     this.Auth = Auth;
     this.$state = $state;
+    this.roles = appConfig.userRoles;
   }
 
   register(form) {

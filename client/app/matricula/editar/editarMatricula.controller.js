@@ -74,7 +74,7 @@
       if (form.$valid) {
         this.$http.put('/api/ordenMatriculas/'+this.matricula._id, this.matricula).then(function cb(response) {
           alert("Orden actualizada con éxito!");
-          self.$state.go('detalle',{ id: self.matricula._numOrden});
+          self.$state.go('matricula.detalleMatricula',{ id: self.matricula._numOrden});
         }, function errcb(response) {
           console.log(response);
         });

@@ -10,7 +10,7 @@
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
+				<div class="profile-usertitle visible-print-inline">
 					<div class="profile-usertitle-name">
 						{{admin.getCurrentUser().name}}
 					</div>
@@ -28,12 +28,12 @@
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu hidden-print">
 					<ul class="nav">
-						<li  ng-class="admin.$state.current.name === 'admin.users' ? 'active' : ''">
+						<li  ui-sref-active="active" ng-show="admin.isAdmin()">
 							<a ui-sref="admin.users">
 							<i class="fa fa-user"></i>
 							Usuarios </a>
 						</li>
-						<li ng-class="admin.$state.current.name === 'admin.matriculas' ? 'active' : ''">
+						<li ui-sref-active="active">
 							<a ui-sref="admin.matriculas">
 							<i class="fa fa-file-text"></i>
 							Matriculas </a>

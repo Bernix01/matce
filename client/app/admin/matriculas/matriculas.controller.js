@@ -9,6 +9,8 @@
       self.nivelesDisponibles = appConfig.nivelesDisponibles;
       $http.get('/api/ordenMatriculas/').then(response => {
         self.matriculas = response.data;
+        // $scope.noOfPages= Math.floor(self.matriculas.length/$scope.entryLimit);
+        // console.log($scope.noOfPages);
         socket.syncUpdates('ordenMatricula', this.matriculas);
       });
       $scope.$on('$destroy', function() {
@@ -18,7 +20,7 @@
         return self.nivelesDisponibles.indexOf(input) === matricula.nivel;
       }
       $scope.currentPage = 1;
-      $scope.entryLimit = 1;
+      $scope.entryLimit = 10;
       $scope.noOfPages= 5;
     }
 
