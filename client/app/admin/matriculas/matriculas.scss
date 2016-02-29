@@ -1,0 +1,70 @@
+.admin {
+  .card {
+    margin-bottom: 15px;
+    .card__title {
+      padding: 0 16px;
+      user-select: none;
+      font-size: 17px;
+      padding-top: 8px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-weight: 400;
+    }
+    .card__subtitle {
+      font-size: 15px;
+      padding: 0 16px;
+    }
+    .card__text {
+      padding: 16px;
+      font-size: 13px;
+    }
+    .card__action-bar {
+      user-select: none;
+      padding: 0 8px;
+      border-top: 1px solid #E0E0E0;
+      box-sizing: border-box;
+      height: 52px;
+    }
+    .card__button {
+      outline: none;
+      position: relative;
+      display: inline-block;
+      line-height: 52px;
+      padding: 0 16px;
+      color: $accent_color;
+    }
+    button {
+      border: none;
+      background: transparent;
+    }
+  }
+  .printTable {
+    h3 {
+      margin-top: 5px;
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    table {
+      page-break-inside:auto;
+      text-align: center;
+      td {
+        font-size: 12px;
+      }
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+      th {
+        font-size: 13px;
+      }
+      td,
+      th {
+        padding: 0.3em;
+        //max-width: 120px;
+      }
+    }
+  }
+}
