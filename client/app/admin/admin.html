@@ -1,16 +1,16 @@
 <navbar></navbar>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
+		<div class="col-md-2">
+			<div class="profile-sidebar panel hidden-print">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
 					<img src="assets/images/avatar_default.png" class="img-responsive hidden-print" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle visible-print-inline">
+				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
 						{{admin.getCurrentUser().name}}
 					</div>
@@ -43,8 +43,8 @@
 				<!-- END MENU -->
 			</div>
 		</div>
-		<div class="col-md-9">
-            <div class="profile-content" ui-view="">
+		<div class="col-md-10">
+            <div class="profile-content admin" ui-view="">
 
             </div>
 		</div>
