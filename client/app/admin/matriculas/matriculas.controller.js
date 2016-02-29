@@ -6,6 +6,7 @@
     constructor($http, socket, appConfig, $scope) {
       this.$http = $http;
       var self = this;
+      $scope.date = new Date();
       self.nivelesDisponibles = appConfig.nivelesDisponibles;
       $http.get('/api/ordenMatriculas/').then(response => {
         self.matriculas = response.data;
@@ -20,7 +21,7 @@
         return self.nivelesDisponibles.indexOf(input) === matricula.nivel;
       }
       $scope.currentPage = 1;
-      $scope.entryLimit = 10;
+      $scope.entryLimit = 9;
       $scope.noOfPages= 5;
     }
 
