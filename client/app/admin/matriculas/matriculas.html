@@ -1,28 +1,118 @@
-<div class="row">
-<div class="form-group col-md-3 hidden-print">
-  <label >Buscar: </label>
-<input class="form-control" ng-model="filtro">
-</div>
-  <div class="form-group col-md-3 hidden-print">
+<div class="row hidden-print">
+  <div class="form-group col-md-4 ">
+    <label >Buscar:
+    </label>
+    <input class="form-control" ng-model="filtro" placeholder="# de orden, nombre, escolaridad, cédula">
+  </div>
+  <div class="form-group col-md-2  pull-right">
     <label>Resultados por página</label>
-    <select class="form-control" ng-model="entryLimit" value="10">
-      <option value="10">10</option>
-      <option value="20">20</option>
-      <option value="40">40</option>
+    <select class="form-control" ng-model="entryLimit">
+      <option value=9>9</option>
+      <option value=21>21</option>
+      <option value=42>42</option>
       <option value="{{vm.matriculas.length}}">Todos</option>
     </select>
   </div>
 </div>
-<ul class="list-group user-list">
-  <li class="list-group-item" ng-repeat="matricula in vm.matriculas | filter: filtro | startFrom: (currentPage-1)*entryLimit | limitTo:entryLimit">
-    <div class="user-info">
-        <strong>{{matricula.nombreCompleto}}</strong><br>
-        <span class="text-muted">{{matricula.nivelAplica}}</span>
-    </div>
-      <a ui-sref="matricula.detalleMatricula({id: matricula._numOrden})" class="view hidden-print"><span class="fa fa-eye fa-2x"></span></a>
+<div class="row hidden-print">
 
-        <a ui-sref="matricula.editarMatricula({id: matricula._numOrden})" class="view hidden-print"><span class="fa fa-pencil fa-2x"></span></a>
-      <a ng-click="vm.deleteMatricula(matricula)" class="trash  hidden-print"><span class="fa fa-trash fa-2x"></span></a>
-  </li>
-</ul>
-<pagination page="currentPage" class="hidden-print" ng-model="currentPage" total-items= "(vm.matriculas |filter: filtro).length" items-per-page="entryLimit"></pagination>
+  <div class="col-lg-3 col-md-4 col-sm-6" ng-repeat="matricula in vm.matriculas | filter: filtro | startFrom: (currentPage-1)*entryLimit | limitTo:entryLimit">
+    <div class="card">
+      <h2 class="card__title">{{matricula.nombreCompleto}}</h2>
+      <span class="card__subtitle">{{matricula.nivelAplica}}</span>
+      <p class="card__text">
+        <strong>Cédula:</strong>{{matricula.cedula}}<br>
+        <strong>Padre:</strong>{{matricula.nombreCompletoPadre}}<br>
+        <strong>Madre:</strong>{{matricula.nombreCompletoMadre}}<br>
+      </p>
+      <div class="card__action-bar ">
+        <button class="card__button" ui-sref="matricula.detalleMatricula({id: matricula._numOrden})">VER</button>
+        <button class="card__button" ui-sref="matricula.editarMatricula({id: matricula._numOrden})">EDITAR</button>
+        <button class="card__button" ng-click="vm.deleteMatricula(matricula)">BORRAR</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<pagination page="currentPage" class=" hidden-print" ng-model="currentPage" total-items="(vm.matriculas |filter: filtro).length" items-per-page="entryLimit"></pagination>
+<div class="visible-print printTable">
+  <h3>Reporte generado por {{admin.getCurrentUser().name +" - "+ admin.getCurrentUser().role}} </h3>
+  <h4>Fecha: {{ date | date:'dd/MM/yyyy'}}</h4>
+  <h4>Hora: {{ date | date:'HH:mm:ss'}}</h4>
+  <table border="1"  class="table-responsive">
+    <thead>
+      <th>
+        Nombres y appellidos
+      </th>
+      <th>
+        Año
+      </th>
+      <th>
+        Cédula
+      </th>
+      <th>
+        Fecha de nacimiento
+      </th>
+      <th>
+        Sexo
+      </th>
+      <th>
+        Anterior institución
+      </th>
+      <th>
+        Representante
+      </th>
+      <th>
+        Cédula representante
+      </th>
+      <th>
+        Teléfonos representante
+      </th>
+      <th>
+        Emails representante
+      </th>
+      <th>
+        Cancelado
+      </th>
+    </thead>
+    <tr ng-repeat="matricula in vm.matriculas | filter: filtro">
+      <td>
+        {{matricula.nombreCompleto}}
+      </td>
+      <td>
+        {{matricula.nivelAplica}}
+      </td>
+      <td>
+        {{matricula.cedula}}
+      </td>
+      <td>
+        {{matricula.fechaNacimiento | date:'yyyy/MM/dd'}}
+      </td>
+      <td>
+        {{matricula.sexo}}
+      </td>
+      <td>
+        {{matricula.anteriorInstitucion}}
+      </td>
+      <td>
+        {{matricula.representante}}
+      </td>
+      <td>
+        {{matricula.representanteCI}}
+      </td>
+      <td>
+        <span>{{matricula.telefonosRepresentanteP}}</span>
+        <br>
+        <span>{{matricula.telefonosRepresentanteA}}</span>
+      </td>
+      <td>
+        <span>{{matricula.emailRepresentanteP}}</span>
+        <br>
+        <span>{{matricula.emailRepresentanteA}}</span>
+      </td>
+      <td>
+        <i class="fa fa-check" ng-show="matricula.active"></i>
+      </td>
+    </tr>
+  </table>
+</div>
