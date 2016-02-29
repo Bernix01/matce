@@ -1,0 +1,10 @@
+.login{
+
+  .center-block{
+    float: none;
+  }
+}
+.btn-login{
+  background-color: $accent_color;
+  color: color-contrast($accent_color);
+}
