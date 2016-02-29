@@ -72,6 +72,11 @@ a{
 }
 .pagination {
   color: $accent_color !important;
+  >li{
+    >a,>span{
+      color: $accent_color;
+    }
+  }
 }
 .navbar-bro {
   background-color: $primary_color;

@@ -67,7 +67,7 @@
       });
     }
 
-    login(form) {
+    enviar(form) {
       this.submitted = true;
       var self = this;
 

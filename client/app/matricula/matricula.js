@@ -15,7 +15,8 @@ angular.module('matriculasApp')
       .state('matricula.crearMatricula', {
         url: '/solicitar',
         templateUrl: 'app/matricula/crear/crearMatricula.html',
-        controller: 'CrearMatriculaCtrl'
+        controller: 'CrearMatriculaCtrl',
+        controllerAs: 'vm'
       })
       .state('matricula.detalleMatricula', {
         url: '/{id}/detalle',
@@ -25,9 +26,9 @@ angular.module('matriculasApp')
       })
       .state('matricula.editarMatricula', {
         url: '/{id}/editar',
-        templateUrl: 'app/matricula/editar/editarMatricula.html',
+        templateUrl: 'app/matricula/crear/crearMatricula.html',
         controller: 'EditarMatriculaCtrl',
-        controllerAs: 'editMat',
+        controllerAs: 'vm',
         authenticate: 'secretaria'
       });
   });

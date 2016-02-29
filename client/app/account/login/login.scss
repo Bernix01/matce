@@ -7,4 +7,12 @@
 .btn-login{
   background-color: $accent_color;
   color: color-contrast($accent_color);
+  &:hover{
+    color: color-contrast($accent_color);
+    background: darken($accent_color,10%);
+  }
+  &:focus{
+    color: color-contrast($accent_color);
+    background: darken($accent_color,15%);
+  }
 }

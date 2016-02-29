@@ -35,84 +35,39 @@
 
 </div>
 <pagination page="currentPage" class=" hidden-print" ng-model="currentPage" total-items="(vm.matriculas |filter: filtro).length" items-per-page="entryLimit"></pagination>
+<!-- <button type="button" name="export" ng-click="vm.excelExport()" class="btn btn-default btn-login">Exportar</button> -->
 <div class="visible-print printTable">
   <h3>Reporte generado por {{admin.getCurrentUser().name +" - "+ admin.getCurrentUser().role}} </h3>
   <h4>Fecha: {{ date | date:'dd/MM/yyyy'}}</h4>
   <h4>Hora: {{ date | date:'HH:mm:ss'}}</h4>
-  <table border="1"  class="table-responsive">
-    <thead>
-      <th>
-        Nombres y appellidos
-      </th>
-      <th>
-        Año
-      </th>
-      <th>
-        Cédula
-      </th>
-      <th>
-        Fecha de nacimiento
-      </th>
-      <th>
-        Sexo
-      </th>
-      <th>
-        Anterior institución
-      </th>
-      <th>
-        Representante
-      </th>
-      <th>
-        Cédula representante
-      </th>
-      <th>
-        Teléfonos representante
-      </th>
-      <th>
-        Emails representante
-      </th>
-      <th>
-        Cancelado
-      </th>
-    </thead>
-    <tr ng-repeat="matricula in vm.matriculas | filter: filtro">
-      <td>
-        {{matricula.nombreCompleto}}
-      </td>
-      <td>
-        {{matricula.nivelAplica}}
-      </td>
-      <td>
-        {{matricula.cedula}}
-      </td>
-      <td>
-        {{matricula.fechaNacimiento | date:'yyyy/MM/dd'}}
-      </td>
-      <td>
-        {{matricula.sexo}}
-      </td>
-      <td>
-        {{matricula.anteriorInstitucion}}
-      </td>
-      <td>
-        {{matricula.representante}}
-      </td>
-      <td>
-        {{matricula.representanteCI}}
-      </td>
-      <td>
-        <span>{{matricula.telefonosRepresentanteP}}</span>
-        <br>
-        <span>{{matricula.telefonosRepresentanteA}}</span>
-      </td>
-      <td>
-        <span>{{matricula.emailRepresentanteP}}</span>
-        <br>
-        <span>{{matricula.emailRepresentanteA}}</span>
-      </td>
-      <td>
-        <i class="fa fa-check" ng-show="matricula.active"></i>
-      </td>
-    </tr>
-  </table>
+  <div class="table">
+    <div class="table-row">
+        <div class="table-cell">Nombres y appellidos</div>
+        <div class="table-cell" ng-show="printOpts.nivelAplica">Año</div>
+        <div class="table-cell"  ng-show="printOpts.cedula">Cédula</div>
+        <div class="table-cell" ng-show="printOpts.fechaNacimiento">Fecha de nacimiento</div>
+        <div class="table-cell"  ng-show="printOpts.tipoSangre">Tipo de sangre</div>
+        <div class="table-cell"  ng-show="printOpts.sexo">Sexo</div>
+        <div class="table-cell" ng-show="printOpts.anteriorInstitucion">Anterior institución</div>
+        <div class="table-cell" ng-show="printOpts.representante">Representante</div>
+        <div class="table-cell" ng-show="printOpts.ciRepresentante">Cédula representante</div>
+        <div class="table-cell" ng-show="printOpts.telsRepresentante">Teléfonos representante</div>
+        <div class="table-cell" ng-show="printOpts.emailRepresentante">Emails representante</div>
+        <div class="table-cell" ng-show="printOpts.estado">Cancelado</div>
+    </div>
+    <div class="table-row" ng-repeat="matricula in vm.matriculas | filter: filtro">
+      <div class="table-cell">{{matricula.nombreCompleto}}</div>
+      <div class="table-cell"  ng-show="printOpts.nivelAplica">{{matricula.nivelAplica}}</div>
+      <div class="table-cell"  ng-show="printOpts.cedula">{{matricula.cedula}}</div>
+            <div class="table-cell"  ng-show="printOpts.fechaNacimiento">{{matricula.fechaNacimiento | date:'yyyy/MM/dd'}}</div>
+      <div class="table-cell"  ng-show="printOpts.sexo">{{matricula.sexo}}</div>
+      <div class="table-cell"  ng-show="printOpts.tipoSangre">{{matricula.tipoSangre}}</div>
+      <div class="table-cell"  ng-show="printOpts.anteriorInstitucion">{{matricula.anteriorInstitucion}}</div>
+      <div class="table-cell" ng-show="printOpts.representante">{{matricula.representante}}</div>
+      <div class="table-cell" ng-show="printOpts.ciRepresentante">{{matricula.representanteCI}}</div>
+      <div class="table-cell" ng-show="printOpts.telsRepresentante"><span>{{matricula.telefonosRepresentanteP}}</span><br><span>{{matricula.telefonosRepresentanteA}}</span></div>
+      <div class="table-cell" ng-show="printOpts.emailRepresentante"><span>{{matricula.emailRepresentanteP}}</span><br> <span>{{matricula.emailRepresentanteA}}</span></div>
+      <div class="table-cell" ng-show="printOpts.estado"><span ng-show="matricula.estado">✔</span></div>
+    </div>
+  </div>
 </div>

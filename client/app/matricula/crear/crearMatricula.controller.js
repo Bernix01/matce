@@ -59,7 +59,7 @@
       }, true);
     }
 
-    login(form) {
+    enviar(form) {
       this.submitted = true;
 
       if (form.$valid) {

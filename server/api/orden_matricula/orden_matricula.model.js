@@ -13,6 +13,7 @@ var OrdenMatriculaSchema = new mongoose.Schema({
   nivel: Number,
   cedula: String,
   nombres: String,
+  tipoSangre: String,
   apellidos: String,
   fechaNacimiento: Date,
   sexo: String,

@@ -17,12 +17,25 @@
       $scope.$on('$destroy', function() {
         socket.unsyncUpdates('ordenMatricula');
       });
-      $scope.filter2 = function (matricula,input) {
+      $scope.filter2 = function(matricula, input) {
         return self.nivelesDisponibles.indexOf(input) === matricula.nivel;
       }
       $scope.currentPage = 1;
       $scope.entryLimit = 9;
-      $scope.noOfPages= 5;
+      $scope.noOfPages = 5;
+      $scope.printOpts = {
+        nivelAplica: true,
+        cedula: true,
+        fechaNacimiento: false,
+        sexo: false,
+        anteriorInstitucion: false,
+        tipoSangre: false,
+        representante: true,
+        ciRepresentante: true,
+        telsRepresentante: true,
+        emailRepresentante: true,
+        estado: true
+      }
     }
 
     deleteMatricula(matricula) {
@@ -34,6 +47,20 @@
           socket.unsyncUpdates('ordenMatricula');
         });
       }
+    }
+
+    excelExport() {
+      console.log("exporting...");
+      var tableInfo = Array.prototype.map.call(document.querySelectorAll('.table .table-row'), function(tr) {
+        return Array.prototype.map.call(tr.querySelectorAll('.table-cell'), function(td) {
+          return td.textContent;
+        });
+      });
+      var blob = new Blob([data], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      });
+      console.log(blob);
+      saveAs(blob, "test.xlsx");
     }
   }
 

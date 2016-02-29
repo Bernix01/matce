@@ -21,7 +21,6 @@
     }
     .card__action-bar {
       user-select: none;
-      padding: 0 8px;
       border-top: 1px solid #E0E0E0;
       box-sizing: border-box;
       height: 52px;
@@ -47,23 +46,41 @@
     h4 {
       font-size: 16px;
     }
-    table {
+    .table {
       page-break-inside:auto;
+      display: table;
       text-align: center;
-      td {
+      border: 2px solid $black;
+      margin: 0 auto;
+      width: auto;
+      .table-cell {
+        display: table-cell;
         font-size: 12px;
       }
-      tr {
+      .table-row {
         page-break-inside: avoid;
         page-break-after: auto;
+        page-break-before: auto;
+        display: table-row;
+        width: 100%;
+        &:not(:last-child){
+          border-bottom: 2px solid $black;
+        }
+
       }
-      th {
+      .table-row-header {
+        @extend .table-row;
+        .table-cell{
         font-size: 13px;
+        font-weight: bold;
       }
-      td,
-      th {
-        padding: 0.3em;
-        //max-width: 120px;
+      }
+      .table-cell,
+      .table-row-header .table-cell {
+        padding: 0.4em;
+        &:not(:last-child){
+          border-right: 2px solid $black;
+        }
       }
     }
   }

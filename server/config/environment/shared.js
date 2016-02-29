@@ -10,6 +10,8 @@ exports = module.exports = {
       'Cuarto nivel'
     ],
     nivelesDisponibles: [
+      'Inicial 2(3 años)',
+      'Inicial 2(4 años)',
       'Primero de básica',
       'Segundo de básica',
       'Tercero de básica',
