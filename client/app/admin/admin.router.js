@@ -10,12 +10,18 @@ angular.module('matriculasApp.admin')
         controllerAs: 'admin',
         authenticate: 'secretaria'
       }).state('admin.users', {
+        data: {
+          pageTitle: 'Matce | Usuarios'
+        },
         url: '/users',
         templateUrl: 'app/admin/users/users.html',
         controller: 'UsersCtrl',
         controllerAs: 'vm',
         authenticate: 'administrador'
       }).state('admin.matriculas', {
+        data: {
+          pageTitle: 'Matce | Matriculas'
+        },
         url: '/matriculas',
         templateUrl: 'app/admin/matriculas/matriculas.html',
         controller: 'MatriculasCtrl',
