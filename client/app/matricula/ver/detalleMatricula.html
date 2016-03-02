@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div ng-show="detMat.detalleOrden">
+  <div ng-show="detMat.detalleOrden" class="card detalle">
     <h1>Orden de matricula
       {{detMat.detalleOrden._numOrden}} emitida el {{detMat.detalleOrden.date |  date:'dd/MM/yyyy'}}</h1>
       <div class="btn-group"  ng-show="detMat.isAdmin()" ><button class="btn btn-default hidden-print" ui-sref="matricula.editarMatricula({id: detMat.detalleOrden._numOrden})"> editar </button>
@@ -12,21 +12,18 @@
       <h4>
         <strong>Nombre:</strong>
         {{detMat.detalleOrden.nombreCompleto}}</h4>
+        <h4>
+          <strong>Cedula:</strong>
+          **********{{detMat.detalleOrden.cedula | limitTo:-3}}</h4>
+        <h4>
+          <strong>Cancelado:</strong>
+          {{detMat.detalleOrden.active ? 'Sí' : 'No'}}</h4>
       <h4>
-        <strong>Fecha de nacimiento:</strong>
-        {{detMat.detalleOrden.fechaNacimiento |  date:'dd/MM/yyyy'}}</h4>
-      <h4>
-        <strong>Lugar de nacimiento:</strong>
-        {{detMat.detalleOrden.lugarNacimiento}}</h4>
+        <strong>Año de nacimiento:</strong>
+        {{detMat.detalleOrden.fechaNacimiento |  date:'yyyy'}}</h4>
       <h4>
         <strong>Sexo:</strong>
         {{detMat.detalleOrden.sexo}}</h4>
-      <h4>
-        <strong>Domicilio:</strong>
-        {{detMat.detalleOrden.lugarDomicilio}}</h4>
-      <h4>
-        <strong>Anterior institución:</strong>
-        {{detMat.detalleOrden.anteriorInstitucion}}</h4>
       <h4>
         <strong>Representante:</strong>
         {{detMat.detalleOrden.representante}}</h4>
@@ -35,13 +32,8 @@
         {{detMat.detalleOrden.representanteParentesco}}</h4>
       <h4>
         <strong>Cédula representante:</strong>
-        {{detMat.detalleOrden.representanteCI}}</h4>
-      <h4>
-        <strong>Correo electrónico del representante:</strong>
-        {{detMat.detalleOrden.emailRepresentante}}</h4>
-      <h4>
-        <strong>Cedula:</strong>
-        {{detMat.detalleOrden.cedula}}</h4>
+        **********{{detMat.detalleOrden.representanteCI|limitTo:-3}}</h4>
+
       <h4>
         <strong>Nivel al que aplica:</strong>
         {{detMat.detalleOrden.nivelAplica}}</h4>
@@ -54,14 +46,8 @@
             <strong>Nombre:</strong>
             {{detMat.detalleOrden.nombreCompletoPadre}}</h4>
           <h4>
-            <strong>Lugar de trabajo:</strong>
-            {{detMat.detalleOrden.lugarTrabajoPadre}}</h4>
-          <h4>
             <strong>Cedula:</strong>
-            {{detMat.detalleOrden.ciPadre}}</h4>
-          <h4>
-            <strong>Nivel de educación:</strong>
-            {{nivelTitulo[detMat.detalleOrden.nivelPadre]}}</h4>
+            **********{{detMat.detalleOrden.ciPadre |limitTo:-3}}</h4>
         </div>
         <div>
           <h2>
@@ -71,14 +57,8 @@
             <strong>Nombre:</strong>
             {{detMat.detalleOrden.nombreCompletoMadre}}</h4>
           <h4>
-            <strong>Lugar de trabajo:</strong>
-            {{detMat.detalleOrden.lugarTrabajoMadre}}</h4>
-          <h4>
             <strong>Cedula:</strong>
-            {{detMat.detalleOrden.ciMadre}}</h4>
-          <h4>
-            <strong>Nivel de educación:</strong>
-            {{nivelTitulo[detMat.detalleOrden.nivelMadre]}}</h4>
+            **********{{detMat.detalleOrden.ciMadre |limitTo:-3}}</h4>
         </div>
   </div>
   <div ng-hide="detMat.detalleOrden">

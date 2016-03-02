@@ -1,0 +1,96 @@
+<div class="container">
+
+  <div ng-show="matricula">
+    <h1>Orden de matricula
+      {{matricula._numOrden}} </h1>
+      <h2>
+        Emitida el {{matricula.date |  date:'dd/MM/yyyy'}}
+      </h2>
+      <div class="btn-group"  ng-show="matricula.isAdmin()" ><button class="btn btn-default hidden-print" ui-sref="matricula.editarMatricula({id: matricula._numOrden})"> editar </button>
+      <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button><button class="btn btn-danger  hidden-print" ng-click="matricula.borrar()">borrar</button></div>
+    <div>
+      <h3>
+        Estudiante
+      </h3>
+      <h5>
+        <strong>Nombre:</strong>
+        {{matricula.nombreCompleto}}</h5>
+        <h5>
+          <strong>Cancelado:</strong>
+          {{matricula.active ? 'Sí' : 'No'}}</h5>
+      <h5>
+        <strong>Fecha de nacimiento:</strong>
+        {{matricula.fechaNacimiento |  date:'dd/MM/yyyy'}}</h5>
+      <h5>
+        <strong>Lugar de nacimiento:</strong>
+        {{matricula.lugarNacimiento}}</h5>
+      <h5>
+        <strong>Sexo:</strong>
+        {{matricula.sexo}}</h5>
+      <h5>
+        <strong>Domicilio:</strong>
+        {{matricula.lugarDomicilio}}</h5>
+      <h5>
+        <strong>Anterior institución:</strong>
+        {{matricula.anteriorInstitucion}}</h5>
+      <h5>
+        <strong>Representante:</strong>
+        {{matricula.representante}}</h5>
+      <h5>
+        <strong>Parentesco:</strong>
+        {{matricula.representanteParentesco}}</h5>
+      <h5>
+        <strong>Cédula representante:</strong>
+        {{matricula.representanteCI}}</h5>
+      <h5>
+        <strong>Correo electrónico del representante:</strong>
+        {{matricula.emailRepresentante}}</h5>
+      <h5>
+        <strong>Cedula:</strong>
+        {{matricula.cedula}}</h5>
+      <h5>
+        <strong>Nivel al que aplica:</strong>
+        {{matricula.nivelAplica}}</h5>
+    </div>
+        <div>
+          <h3>
+            Padre
+          </h3>
+          <h5>
+            <strong>Nombre:</strong>
+            {{matricula.nombreCompletoPadre}}</h5>
+          <h5>
+            <strong>Lugar de trabajo:</strong>
+            {{matricula.lugarTrabajoPadre}}</h5>
+          <h5>
+            <strong>Cedula:</strong>
+            {{matricula.ciPadre}}</h5>
+          <h5>
+            <strong>Nivel de educación:</strong>
+            {{nivelTitulo[matricula.nivelPadre]}}</h5>
+        </div>
+        <div>
+          <h3>
+            Madre
+          </h3>
+          <h5>
+            <strong>Nombre:</strong>
+            {{matricula.nombreCompletoMadre}}</h5>
+          <h5>
+            <strong>Lugar de trabajo:</strong>
+            {{matricula.lugarTrabajoMadre}}</h5>
+          <h5>
+            <strong>Cedula:</strong>
+            {{matricula.ciMadre}}</h5>
+          <h5>
+            <strong>Nivel de educación:</strong>
+            {{nivelTitulo[matricula.nivelMadre]}}</h5>
+        </div>
+  </div>
+  <div ng-hide="matricula">
+    <p>
+      No se ha encontrado ningún resultado.
+    </p>
+
+  </div>
+</div>

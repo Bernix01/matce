@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="jumbotron" ng-show="mat.checkHome()">
+    <div class="jumbotron card" ng-show="mat.checkHome()">
       <h1>Ordenes de matrícula</h1>
       <p>Para solicitar una orden matrícula llene el <a ui-sref="matricula.crearMatricula"><strong>formulario</strong></a>.  Si desea saber el estado de su orden de matricula, ingrese el número de orden.</p>
       <div class="input-group input-group-lg">
@@ -10,7 +10,7 @@
         <span class="input-group-btn"><button type="button" name="button" class="btn btn-default" ui-sref="matricula.detalleMatricula({id: id_buscar})">Buscar</button></span>
       </div>
     </div>
-    <div ui-view=""></div>
   </div>
 </div>
+<div ui-view=""></div>
 <footer></footer>

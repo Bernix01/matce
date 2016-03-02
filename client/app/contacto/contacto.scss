@@ -1,0 +1,20 @@
+.contact {
+  text-align: center;
+  height: 90%;
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .contact-card {
+      text-align: left;
+      .inner {
+        @extend .card;
+        padding: 2em;
+      }
+    }
+  }
+}
+.view {
+  height: 100%;
+}

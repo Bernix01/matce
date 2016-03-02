@@ -1,0 +1,102 @@
+.admin {
+  .status{
+    display: inline-block;
+    .label{
+      font-size: 1.1em;
+      margin-left: .3em;
+    }
+  }
+  .controls{
+  }
+
+  .bar{
+    border-bottom: 1px solid $black;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .card {
+    margin-bottom: 15px;
+    .card__title {
+      padding: 0 16px;
+      user-select: none;
+      font-size: 17px;
+      padding-top: 8px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-weight: 400;
+    }
+    .card__subtitle {
+      font-size: 15px;
+      padding: 0 16px;
+    }
+    .card__text {
+      padding: 16px;
+      font-size: 13px;
+    }
+    .card__action-bar {
+      user-select: none;
+      border-top: 1px solid #E0E0E0;
+      box-sizing: border-box;
+      height: 52px;
+    }
+    .card__button {
+      outline: none;
+      position: relative;
+      display: inline-block;
+      line-height: 52px;
+      padding: 0 16px;
+      color: $accent_color;
+    }
+    button {
+      border: none;
+      background: transparent;
+    }
+  }
+  .printTable {
+    h3 {
+      margin-top: 5px;
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    .table {
+      page-break-inside:auto;
+      display: table;
+      text-align: center;
+      border: 2px solid $black;
+      margin: 0 auto;
+      width: auto;
+      .table-cell {
+        display: table-cell;
+        font-size: 12px;
+      }
+      .table-row {
+        page-break-inside: avoid;
+        page-break-after: auto;
+        page-break-before: auto;
+        display: table-row;
+        width: 100%;
+        &:not(:last-child){
+          border-bottom: 2px solid $black;
+        }
+
+      }
+      .table-row-header {
+        @extend .table-row;
+        .table-cell{
+        font-size: 13px;
+        font-weight: bold;
+      }
+      }
+      .table-cell,
+      .table-row-header .table-cell {
+        padding: 0.4em;
+        &:not(:last-child){
+          border-right: 2px solid $black;
+        }
+      }
+    }
+  }
+}

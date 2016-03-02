@@ -2,31 +2,165 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
+@import '../bower_components/sass-material-colors/sass/sass-material-colors';
 
+/**
+ * App-wide vars
+ */
+
+ $accent_color: material-color('teal', 'a700');
+ $secondary_color: material-color('orange','500');
+ $primary_color: material-color('teal','500');
+ $primary_color_light: material-color('teal','300');
+ $primary_color_dark: material-color('teal','700');
+ $white: material-color('grey','50');
+ $black: #636363;
+
+/**
+ * App-wide fn
+ */
+@function color-contrast($color) {
+  @if (lightness($color) > 60) {
+    @return $black; // Lighter backgorund, return dark color
+  }
+  @else {
+    @return $white; // Darker background, return light color
+  }
+}
+
+$primary_color_text : color-contrast($primary_color);
 /**
  * App-wide Styles
  */
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
-body{
-  background-color: #fcfcfc;
+html,body {
+  background-color: #eee;
+  color: $black;
+  height: 100%;
 }
+
+h1{
+  color: $primary_color;
+}
+
+a{
+  color: $accent_color;
+  &:hover{
+    color: lighten($accent_color,5%);
+    text-decoration: none;
+  }
+  &:active{
+    color: lighten($accent_color,10%);
+  }
+  &:focus{
+    color: lighten($accent_color,5%);
+    outline: none;
+    text-decoration: none;
+  }
+}
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  background-color: $primary_color !important;
+}
+.pagination {
+  color: $accent_color !important;
+  >li{
+    >a,>span{
+      color: $accent_color;
+    }
+  }
+}
+.navbar-bro {
+  background-color: $primary_color;
+  border: none;
+  .navbar-brand{
+    img{
+      height: 20px;
+    }
+  }
+  .navbar-text{
+    color: $primary_color_text;
+  }
+  .navbar-toggle{
+    .icon-bar{
+      background-color: $primary_color_text;
+    }
+  }
+
+  .navbar-brand {
+    color: $primary_color_text;
+    &:hover{
+        color: lighten($primary_color_text,30%);
+    }
+  }
+  .navbar-nav {
+    >.active {
+      >a {
+        color: lighten($primary_color_text,10%);
+        background-color: lighten($primary_color,5%);
+        &:hover {
+          background-color: darken($primary_color,5%);
+          color: lighten($primary_color_text,20%);
+        }
+      }
+    }
+    >li {
+      >a {
+        color: $primary_color_text;
+        &:hover {
+          background-color: darken($primary_color,5%);
+          color: lighten($primary_color_text,10%);
+        }
+      }
+    }
+  }
+}
+.panel {
+  background-color: $white !important;
+}
+
+.card{
+  border-radius: 0 !important;
+  background: #fafafa !important;
+  border: 1px solid #ebebeb !important;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px !important;
+}
+
+form {
+  @extend .card;
+  margin: 4em auto;
+  padding: 2em 2em 2em 2em;
+  .form-group{
+    margin-bottom: 45px;
+  }
+
+  h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+}
+
+
 
 // Component styles are injected through grunt
 // injector
+@import 'account/login/login.scss';
 @import 'admin/_util.scss';
 @import 'admin/admin.scss';
 @import 'admin/matriculas/matriculas.scss';
 @import 'admin/users/users.scss';
+@import 'contacto/contacto.scss';
 @import 'main/main.scss';
-@import 'matricula/crear/crearMatricula.scss';
-@import 'matricula/editar/editarMatricula.scss';
 @import 'matricula/matricula.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';

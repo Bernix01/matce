@@ -1,25 +1,57 @@
+.errorMat{
+    padding: 1.3em;
+    margin-bottom: 1em;
+}
 
 fieldset{
-  border: 1px groove #ddd !important;
-  padding: 0 1.4em 1.4em 1.4em;
-  margin: 0 0 1.5em 0 !important;
-  @box-shadow(0,0,0,#000);
-
+  min-width: 12px;
   legend{
-    font-size: 1.5em !important;
-    font-weight: bold !important;
-    text-align: left !important;
-    width: auto !important;
-    padding: 0 10px;
-    background: white;
-    border-bottom: none !important;
+    float: left;
+    border: none;
   }
 }
-.separator{
-  border-top: 1px solid rgb(194, 194, 194);
-  width: 100%;
+
+.btn-matricula{
+  @extend .btn-login;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.header-bar {
   position: relative;
-  height: 0;
-  float: left;
-  margin: 5px 5px 20px 5px;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: $primary_color;
+  padding-bottom: 4em;
+  h1 {
+    color: $primary_color_text;
+  }
+  h2 {
+    color: $primary_color_text;
+  }
+  h3{
+    i{
+      font-size: .8em;
+    }
+  }
+}
+
+.cr{
+  margin-top: -3em;
+  form{
+    margin-top: 0;
+  }
+}
+
+.detalle{
+  padding: 2em 2em 3em 3em;
 }
