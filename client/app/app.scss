@@ -38,9 +38,10 @@ $primary_color_text : color-contrast($primary_color);
   color: #000;
   padding: 0.2em 0;
 }
-body {
+html,body {
   background-color: #eee;
   color: $black;
+  height: 100%;
 }
 
 h1{
@@ -81,6 +82,11 @@ a{
 .navbar-bro {
   background-color: $primary_color;
   border: none;
+  .navbar-brand{
+    img{
+      height: 20px;
+    }
+  }
   .navbar-text{
     color: $primary_color_text;
   }
@@ -153,9 +159,8 @@ form {
 @import 'admin/admin.scss';
 @import 'admin/matriculas/matriculas.scss';
 @import 'admin/users/users.scss';
+@import 'contacto/contacto.scss';
 @import 'main/main.scss';
-@import 'matricula/crear/crearMatricula.scss';
-@import 'matricula/editar/editarMatricula.scss';
 @import 'matricula/matricula.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';

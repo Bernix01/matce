@@ -7,7 +7,7 @@
 <div class="container cr">
   <div class="row">
     <div class="col-sm-12">
-      <form class="form card" name="form" ng-submit="vm.enviar(form)">
+      <form class="form card" name="form" >
         <div class="row">
           <div class="col-sm-12">
             <fieldset >
@@ -18,7 +18,7 @@
               <legend>
                 <h2 style="margin-top: 0;">Datos del estudiante</h2>
               </legend>
-              <div class="form-group col-md-5">
+              <div class="form-group col-md-4">
                 <label>Nombres</label>
                 <input type="text" name="nombres" class="form-control" ng-model="vm.matricula.nombres" required>
               </div>
@@ -26,11 +26,11 @@
                 <label>Apellidos</label>
                 <input type="text" name="apellidos" class="form-control" ng-model="vm.matricula.apellidos" required>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-2">
                 <label>Cédula de identidad</label>
                 <input type="text" name="ci" class="form-control" ng-model="vm.matricula.cedula" required>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-2">
                 <label>Fecha de nacimiento</label>
                 <input type="date" name="fn" class="form-control" ng-model="vm.matricula.fechaNacimiento" required>
               </div>
@@ -39,22 +39,28 @@
                 <label>Lugar de nacimiento</label>
                 <input type="text" name="ln" class="form-control" ng-model="vm.matricula.lugarNacimiento" required>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-sm-6 col-md-2">
                 <label>Sexo</label>
                 <select class="form-control" name="sx" ng-model="vm.matricula.sexo">
                   <option value="M">Masculino</option>
                   <option value="F">Femenino</option>
                 </select>
               </div>
+              <div class="form-group col-sm-6 col-md-2">
+                <label>Tipo de sangre</label>
+                <input type="text" name="tps" class="form-control" ng-model="vm.matricula.tipoSangre" required>
+              </div>
+              <div class="form-group col-md-2">
+                <label >Año
+                  <i class="fa fa-question-circle" tooltip="Año al que aplica"></i>
+                </label>
+                <select ng-model="vm.matricula.nivel" class="form-control" name="nea" ng-options="nivelesDisponibles.indexOf(selectedItem3) as selectedItem3 for selectedItem3 in nivelesDisponibles"></select>
+              </div>
               <div class="form-group clear col-md-9">
                 <label>Dirección de domicilio</label>
                 <input type="text" name="dd" class="form-control" ng-model="vm.matricula.lugarDomicilio" required>
               </div>
 
-              <div class="form-group col-md-3">
-                <label>Nivel de educación a aplicar</label>
-                <select ng-model="vm.matricula.nivel" class="form-control" name="nea" ng-options="nivelesDisponibles.indexOf(selectedItem3) as selectedItem3 for selectedItem3 in nivelesDisponibles"></select>
-              </div>
               <div class="form-group col-md-9">
                 <label>
                   Personas con quien convive</label>
@@ -71,14 +77,14 @@
                 <label>Institución anterior</label>
                 <input type="text" name="nombres" class="form-control" ng-model="vm.matricula.anteriorInstitucion" required>
               </div>
-              <div class="form-group col-sm-12">
-                <h2>Representante escolar
-                </h2>
+              <h2 class="col-sm-12">Representante escolar
+              </h2>
+              <div class="form-group col-md-10">
                 <label>Nombre completo</label>
                 <input type="text" name="nombres" class="form-control" ng-model="vm.matricula.representante" required>
               </div>
 
-              <div class="form-group col-sm-3">
+              <div class="form-group col-sm-2">
                 <label>Parentesco</label>
                 <input type="text" name="nombres" class="form-control" ng-model="vm.matricula.representanteParentesco" required>
               </div>
@@ -89,7 +95,7 @@
               </div>
 
               <div class="form-group col-sm-3">
-                <label>Telefonos</label>
+                <label>Teléfonos</label>
                 <input type="tel" name="nombres" class="form-control" ng-model="vm.matricula.telefonosRepresentanteP" required>
                 <br/>
                 <input type="tel" name="nombres" placeholder="Opcional" class="form-control" ng-model="vm.matricula.telefonosRepresentantA">
@@ -99,7 +105,7 @@
                 <label>Correo electrónico</label>
                 <input type="email" name="nombres" class="form-control" ng-model="vm.matricula.emailRepresentanteP" required>
                 <br/>
-                <input type="email" name="nombres" class="form-control" ng-model="vm.matricula.emailRepresentanteA">
+                <input type="email" name="nombres" class="form-control" ng-model="vm.matricula.emailRepresentanteA" placeholder="Opcional">
               </div>
             </fieldset>
           </div>
@@ -169,7 +175,14 @@
         </div>
         <div class="clearfix"></div>
         <div >
-          <button class="btn btn-inverse btn-lg btn-matricula pull-right" type="submit">
+          <div class="errorMat bg-danger" ng-show="vm.errors">
+            {{vm.errors}}
+          </div>
+          <label class="checkbox-inline" ng-show="edit">
+            <input type="checkbox" name="activo" ng-model="vm.matricula.active">
+            Cancelado?
+          </label>
+          <button class="btn btn-inverse btn-lg btn-matricula pull-right" ng-click="vm.enviar(form)">
             Enviar
           </button>
         </div>

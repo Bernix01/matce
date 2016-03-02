@@ -4,7 +4,10 @@ var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 import config from '../../config/environment/shared';
 
 var OrdenMatriculaSchema = new mongoose.Schema({
-  active: {type: Boolean, default: false},
+  active: {
+    type: Boolean,
+    default: false
+  },
   date: {
     type: Date,
     default: Date.now
@@ -40,19 +43,19 @@ var OrdenMatriculaSchema = new mongoose.Schema({
   nivelMadre: Number,
   ciPadre: String,
   ciMadre: String
-  //,  telefonosContacto: [String]
+    //,  telefonosContacto: [String]
 });
 
 OrdenMatriculaSchema.virtual('nombreCompleto').get(function() {
-  return this.nombres +" "+ this.apellidos;
+  return this.nombres + " " + this.apellidos;
 });
 
 OrdenMatriculaSchema.virtual('nombreCompletoPadre').get(function() {
-  return this.nombresPadre +" "+ this.apellidosPadre;
+  return this.nombresPadre + " " + this.apellidosPadre;
 });
 
 OrdenMatriculaSchema.virtual('nombreCompletoMadre').get(function() {
-  return this.nombresMadre +" "+ this.apellidosMadre;
+  return this.nombresMadre + " " + this.apellidosMadre;
 });
 
 OrdenMatriculaSchema.virtual('nivelAplica').get(function() {
@@ -61,12 +64,15 @@ OrdenMatriculaSchema.virtual('nivelAplica').get(function() {
 
 OrdenMatriculaSchema.pre('save', function(next) {
   var self = this;
-  if(self._numOrden == null){
-  self._numOrden = self.nombres.charAt(0)+self.apellidos.charAt(0)+self.nivel+self.date.getMilliseconds();
-}
+  if (self._numOrden == null) {
+    self._numOrden = self.nombres.charAt(0) + self.apellidos.charAt(0) + self.nivel + self.date.getMilliseconds();
+    self.active = false; //Siempre crear solicitud no cancelada!
+  }
+
   next();
 });
 
-OrdenMatriculaSchema.set('toJSON', { getters: true });
-
+OrdenMatriculaSchema.set('toJSON', {
+  getters: true
+});
 export default mongoose.model('OrdenMatricula', OrdenMatriculaSchema);

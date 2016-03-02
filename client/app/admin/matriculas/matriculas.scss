@@ -1,4 +1,19 @@
 .admin {
+  .status{
+    display: inline-block;
+    .label{
+      font-size: 1.1em;
+      margin-left: .3em;
+    }
+  }
+  .controls{
+  }
+
+  .bar{
+    border-bottom: 1px solid $black;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
   .card {
     margin-bottom: 15px;
     .card__title {

@@ -26,7 +26,7 @@
   <body>
     <!--[if lt IE 7]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
+    <div ui-view="" class="view"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function (i, s, o, g, r, a, m) {
@@ -69,20 +69,25 @@
     <script src="app/admin/admin.module.js"></script>
     <script src="components/auth/auth.module.js"></script>
     <script src="components/util/util.module.js"></script>
-    <script src="app/matricula/matricula.js"></script>
+    <script src="app/matricula/crear/crearMatricula.controller.js"></script>
     <script src="app/admin/admin.controller.js"></script>
     <script src="app/account/account.js"></script>
     <script src="app/admin/admin.router.js"></script>
+    <script src="app/admin/matricula/DetalleMatriculaAdminCtrl/DetalleMatriculaAdminCtrl.controller.js"></script>
+    <script src="app/admin/matriculas/DetalleMatriculaAdminCtrl/DetalleMatriculaAdminCtrl.controller.js"></script>
     <script src="app/admin/matriculas/matriculas.controller.js"></script>
     <script src="app/admin/users/users.controller.js"></script>
     <script src="app/app.constant.js"></script>
+    <script src="app/contacto/contacto.controller.js"></script>
+    <script src="app/contacto/contacto.js"></script>
     <script src="app/filters/startFrom/startFrom.filter.js"></script>
+    <script src="app/jqueryscript.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
-    <script src="app/matricula/crear/crearMatricula.controller.js"></script>
+    <script src="app/account/login/login.controller.js"></script>
     <script src="app/matricula/editar/editarMatricula.controller.js"></script>
     <script src="app/matricula/matricula.controller.js"></script>
-    <script src="app/account/login/login.controller.js"></script>
+    <script src="app/matricula/matricula.js"></script>
     <script src="app/matricula/ver/DetalleMatriculaCtrl.controller.js"></script>
     <script src="app/account/settings/settings.controller.js"></script>
     <script src="components/auth/auth.service.js"></script>
@@ -100,5 +105,14 @@
     <script src="components/util/util.service.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->
+    <!--
+_/_/_/                                  _/                  _/      _/
+_/    _/    _/_/    _/  _/_/  _/_/_/        _/    _/      _/  _/  _/_/
+_/_/_/    _/_/_/_/  _/_/      _/    _/  _/    _/_/        _/  _/    _/
+_/    _/  _/        _/        _/    _/  _/  _/    _/      _/  _/    _/
+_/_/_/      _/_/_/  _/        _/    _/  _/  _/    _/        _/      _/
+
+     -->
+
   </body>
 </html>

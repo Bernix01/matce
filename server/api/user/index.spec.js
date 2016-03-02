@@ -48,7 +48,7 @@ describe('User API Router:', function() {
 
     it('should verify admin role and route to user.controller.index', function() {
       routerStub.get
-        .withArgs('/', 'authService.hasRole.admin', 'userCtrl.index')
+        .withArgs('/', 'authService.hasRole.administrador', 'userCtrl.index')
         .should.have.been.calledOnce;
     });
 
@@ -58,7 +58,7 @@ describe('User API Router:', function() {
 
     it('should verify admin role and route to user.controller.destroy', function() {
       routerStub.delete
-        .withArgs('/:id', 'authService.hasRole.admin', 'userCtrl.destroy')
+        .withArgs('/:id', 'authService.hasRole.administrador', 'userCtrl.destroy')
         .should.have.been.calledOnce;
     });
 
@@ -98,7 +98,7 @@ describe('User API Router:', function() {
 
     it('should route to user.controller.create', function() {
       routerStub.post
-        .withArgs('/', 'userCtrl.create')
+        .withArgs('/', 'authService.hasRole.administrador', 'userCtrl.create')
         .should.have.been.calledOnce;
     });
 

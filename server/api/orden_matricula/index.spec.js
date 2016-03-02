@@ -9,7 +9,11 @@ var ordenMatriculaCtrlStub = {
   update: 'ordenMatriculaCtrl.update',
   destroy: 'ordenMatriculaCtrl.destroy'
 };
-
+var authServiceStub = {
+  hasRole(role) {
+    return 'authService.hasRole.' + role;
+  }
+};
 var routerStub = {
   get: sinon.spy(),
   put: sinon.spy(),
@@ -25,7 +29,8 @@ var ordenMatriculaIndex = proxyquire('./index.js', {
       return routerStub;
     }
   },
-  './orden_matricula.controller': ordenMatriculaCtrlStub
+  './orden_matricula.controller': ordenMatriculaCtrlStub,
+  '../../auth/auth.service': authServiceStub
 });
 
 describe('OrdenMatricula API Router:', function() {
@@ -38,7 +43,7 @@ describe('OrdenMatricula API Router:', function() {
 
     it('should route to ordenMatricula.controller.index', function() {
       routerStub.get
-        .withArgs('/', 'ordenMatriculaCtrl.index')
+        .withArgs('/', 'authService.hasRole.secretaria', 'ordenMatriculaCtrl.index')
         .should.have.been.calledOnce;
     });
 
@@ -68,7 +73,7 @@ describe('OrdenMatricula API Router:', function() {
 
     it('should route to ordenMatricula.controller.update', function() {
       routerStub.put
-        .withArgs('/:id', 'ordenMatriculaCtrl.update')
+        .withArgs('/:id', 'authService.hasRole.secretaria', 'ordenMatriculaCtrl.update')
         .should.have.been.calledOnce;
     });
 
@@ -78,7 +83,7 @@ describe('OrdenMatricula API Router:', function() {
 
     it('should route to ordenMatricula.controller.update', function() {
       routerStub.patch
-        .withArgs('/:id', 'ordenMatriculaCtrl.update')
+        .withArgs('/:id', 'authService.hasRole.secretaria', 'ordenMatriculaCtrl.update')
         .should.have.been.calledOnce;
     });
 
@@ -88,7 +93,7 @@ describe('OrdenMatricula API Router:', function() {
 
     it('should route to ordenMatricula.controller.destroy', function() {
       routerStub.delete
-        .withArgs('/:id', 'ordenMatriculaCtrl.destroy')
+        .withArgs('/:id', 'authService.hasRole.secretaria', 'ordenMatriculaCtrl.destroy')
         .should.have.been.calledOnce;
     });
 

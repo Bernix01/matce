@@ -7,6 +7,25 @@
           #{$property}: #{$value};
 }
 
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media (min-width: $screen-sm-min) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "md" {
+    @media (min-width: $screen-md-min) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "lg" {
+    @media (min-width: $screen-lg-min) {
+      @content;
+    }
+  }
+}
 
 /// Background Gradient
 /// @param {Color} $startColor [#3C3C3C] - Start Color

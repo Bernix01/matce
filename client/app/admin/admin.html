@@ -1,52 +1,52 @@
 <navbar></navbar>
 
 <div class="container-fluid">
-    <div class="row profile">
-		<div class="col-md-2">
-			<div class="profile-sidebar panel hidden-print">
-				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-					<img src="assets/images/avatar_default.png" class="img-responsive hidden-print" alt="">
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						{{admin.getCurrentUser().name}}
-					</div>
-					<div class="profile-usertitle-job">
-						{{admin.getCurrentUser().role}}
-					</div>
-				</div>
-				<!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR BUTTONS -->
-				<!-- <div class="profile-userbuttons hidden-print">
+  <div class="row profile">
+    <div class="col-md-2">
+      <div class="profile-sidebar card hidden-print">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img src="assets/images/avatar_default.png" class="img-responsive hidden-print" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            {{admin.getCurrentUser().name}}
+          </div>
+          <div class="profile-usertitle-job">
+            {{admin.getCurrentUser().role}}
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+        <!-- SIDEBAR BUTTONS -->
+        <!-- <div class="profile-userbuttons hidden-print">
 					<button type="button" class="btn btn-success btn-sm">Follow</button>
 					<button type="button" class="btn btn-danger btn-sm">Message</button>
 				</div> -->
-				<!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu hidden-print">
-					<ul class="nav">
-						<li  ui-sref-active="active" ng-show="admin.isAdmin()">
-							<a ui-sref="admin.users">
-							<i class="fa fa-user"></i>
-							Usuarios </a>
-						</li>
-						<li ui-sref-active="active">
-							<a ui-sref="admin.matriculas">
-							<i class="fa fa-file-text"></i>
-							Matriculas </a>
-						</li>
-					</ul>
-				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
-		<div class="col-md-10">
-            <div class="profile-content admin" ui-view="">
-
-            </div>
-		</div>
-	</div>
+        <!-- END SIDEBAR BUTTONS -->
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu hidden-print">
+          <ul class="nav">
+            <li ui-sref-active="active">
+              <a ui-sref="admin.matriculas">
+                <i class="fa fa-file-text"></i>
+                Matriculas
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-show="admin.isAdmin()">
+              <a ui-sref="admin.users">
+                <i class="fa fa-user"></i>
+                Usuarios
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="profile-content card admin" ui-view=""></div>
+    </div>
+  </div>
 </div>

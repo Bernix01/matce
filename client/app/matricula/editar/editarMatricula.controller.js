@@ -5,10 +5,11 @@
   class EditarMatriculaCtrl {
 
     constructor($http, $state, $stateParams, socket, $scope, appConfig) {
+      $scope.edit = true;
       $scope.nivelTitulo = appConfig.nivelTitulo;
       var self = this;
       this.matricula = {};
-      this.errors = {};
+      this.errors = '';
       this.submitted = false;
       this.$state = $state;
       this.$http = $http;
@@ -69,18 +70,75 @@
 
     enviar(form) {
       this.submitted = true;
+      if (!this.valid()) {
+        return;
+      }
+
       var self = this;
 
       if (form.$valid) {
-        this.$http.put('/api/ordenMatriculas/'+this.matricula._id, this.matricula).then(function cb(response) {
+        this.$http.put('/api/ordenMatriculas/' + this.matricula._id, this.matricula).then(function cb(response) {
           console.log(response.data);
           alert("Orden actualizada con éxito!");
-          self.$state.go('matricula.detalleMatricula',{ id: self.matricula._numOrden});
+          self.$state.go('matricula.detalleMatricula', {
+            id: self.matricula._numOrden
+          });
         }, function errcb(response) {
           console.log(response);
         });
       }
     }
+
+
+    valid() {
+      this.errors = '';
+      var flag = true;
+      if(this.matricula.fechaNacimiento.getFullYear() - (new Date()).getFullYear() >= 0){
+        flag = false;
+        this.errors = this.errors.concat('La matrícula de no nacidos y neonatos no está disponible por el momento.\n\n ');
+      }
+      if (this.matricula.nombres.split(' ').length != 2) {
+        flag = false;
+        this.errors = this.errors.concat('Nombre incompleto.\n\n ');
+      }
+
+
+      if (this.matricula.apellidos.split(' ').length != 2) {
+        flag = false;
+        this.errors = this.errors.concat('Apellido incompleto.\n\n ');
+      }
+
+      if (this.matricula.representante.split(' ').length != 4) {
+        flag = false;
+        this.errors = this.errors.concat('Nombre completo del representante es requerido.\n\n ');
+      }
+
+
+      if (this.matricula.representante.split(' ').length != 4) {
+        flag = false;
+        this.errors = this.errors.concat('Nombre completo del representante es requerido.\n\n ');
+      }
+
+      if (this.matricula.nivel === 0 || this.matricula.nivel === 1) {
+        var today = new Date();
+        var dif = today.getFullYear() - this.matricula.fechaNacimiento.getFullYear();
+        if (dif === 3 || dif === 4) {
+          if (this.matricula.fechaNacimiento.getMonth() > 4 && this.matricula.fechaNacimiento.getDay() > 2) {
+            flag = false;
+            this.errors = this.errors.concat('Edad no válida para el nivel solicitado.\n De acuerdo al Ministerio de educación para alplicar a Inicial 2 debe cumplirse que el estudiante cumpla los 3 o 4 años hasta el 2 de mayo del presente año.\n\n');
+            console.log(this.errors);
+          }
+        } else {
+          flag = false;
+          this.errors = this.errors.concat('Edad no válida para el nivel solicitado.\n De acuerdo al Ministerio de educación para alplicar a Inicial 2 debe cumplirse que el estudiante cumpla los 3 o 4 años hasta el 2 de mayo del presente año.\n\n');
+        }
+
+      }
+      return flag;
+    }
+
+
+
   }
 
   angular.module('matriculasApp')
