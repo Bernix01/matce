@@ -15,5 +15,4 @@
 
   angular.module('matriculasApp.admin')
     .controller('UsersCtrl', UsersCtrl);
-
   })();
