@@ -1,13 +1,30 @@
-<div class="container">
+<div class="detalle">
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
 
+      .detalle * {
+        visibility: visible;
+      }
+
+  </style>
   <div ng-show="matricula">
     <h1>Orden de matricula
-      {{matricula._numOrden}} </h1>
-      <h2>
-        Emitida el {{matricula.date |  date:'dd/MM/yyyy'}}
-      </h2>
-      <div class="btn-group"  ng-show="matricula.isAdmin()" ><button class="btn btn-default hidden-print" ui-sref="matricula.editarMatricula({id: matricula._numOrden})"> editar </button>
-      <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button><button class="btn btn-danger  hidden-print" ng-click="matricula.borrar()">borrar</button></div>
+      {{matricula._numOrden}}
+    </h1>
+    <h2>
+      Emitida el
+      {{matricula.date |  date:'dd/MM/yyyy'}}
+    </h2>
+    <div class="btn-group" ng-show="matricula.isAdmin()">
+      <button class="btn btn-default hidden-print" ui-sref="matricula.editarMatricula({id: matricula._numOrden})">
+        editar
+      </button>
+      <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button>
+      <button class="btn btn-danger  hidden-print" ng-click="matricula.borrar()">borrar</button>
+    </div>
     <div>
       <h3>
         Estudiante
@@ -15,9 +32,9 @@
       <h5>
         <strong>Nombre:</strong>
         {{matricula.nombreCompleto}}</h5>
-        <h5>
-          <strong>Cancelado:</strong>
-          {{matricula.active ? 'Sí' : 'No'}}</h5>
+      <h5>
+        <strong>Cancelado:</strong>
+        {{matricula.active ? 'Sí' : 'No'}}</h5>
       <h5>
         <strong>Fecha de nacimiento:</strong>
         {{matricula.fechaNacimiento |  date:'dd/MM/yyyy'}}</h5>
@@ -27,6 +44,9 @@
       <h5>
         <strong>Sexo:</strong>
         {{matricula.sexo}}</h5>
+      <h5>
+        <strong>Tipo de sangre:</strong>
+        {{matricula.tipoSangre}}</h5>
       <h5>
         <strong>Domicilio:</strong>
         {{matricula.lugarDomicilio}}</h5>
@@ -52,40 +72,40 @@
         <strong>Nivel al que aplica:</strong>
         {{matricula.nivelAplica}}</h5>
     </div>
-        <div>
-          <h3>
-            Padre
-          </h3>
-          <h5>
-            <strong>Nombre:</strong>
-            {{matricula.nombreCompletoPadre}}</h5>
-          <h5>
-            <strong>Lugar de trabajo:</strong>
-            {{matricula.lugarTrabajoPadre}}</h5>
-          <h5>
-            <strong>Cedula:</strong>
-            {{matricula.ciPadre}}</h5>
-          <h5>
-            <strong>Nivel de educación:</strong>
-            {{nivelTitulo[matricula.nivelPadre]}}</h5>
-        </div>
-        <div>
-          <h3>
-            Madre
-          </h3>
-          <h5>
-            <strong>Nombre:</strong>
-            {{matricula.nombreCompletoMadre}}</h5>
-          <h5>
-            <strong>Lugar de trabajo:</strong>
-            {{matricula.lugarTrabajoMadre}}</h5>
-          <h5>
-            <strong>Cedula:</strong>
-            {{matricula.ciMadre}}</h5>
-          <h5>
-            <strong>Nivel de educación:</strong>
-            {{nivelTitulo[matricula.nivelMadre]}}</h5>
-        </div>
+    <div>
+      <h3>
+        Padre
+      </h3>
+      <h5>
+        <strong>Nombre:</strong>
+        {{matricula.nombreCompletoPadre}}</h5>
+      <h5>
+        <strong>Lugar de trabajo:</strong>
+        {{matricula.lugarTrabajoPadre}}</h5>
+      <h5>
+        <strong>Cedula:</strong>
+        {{matricula.ciPadre}}</h5>
+      <h5>
+        <strong>Nivel de educación:</strong>
+        {{nivelTitulo[matricula.nivelPadre]}}</h5>
+    </div>
+    <div>
+      <h3>
+        Madre
+      </h3>
+      <h5>
+        <strong>Nombre:</strong>
+        {{matricula.nombreCompletoMadre}}</h5>
+      <h5>
+        <strong>Lugar de trabajo:</strong>
+        {{matricula.lugarTrabajoMadre}}</h5>
+      <h5>
+        <strong>Cedula:</strong>
+        {{matricula.ciMadre}}</h5>
+      <h5>
+        <strong>Nivel de educación:</strong>
+        {{nivelTitulo[matricula.nivelMadre]}}</h5>
+    </div>
   </div>
   <div ng-hide="matricula">
     <p>

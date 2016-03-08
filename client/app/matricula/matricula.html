@@ -1,10 +1,13 @@
 <navbar></navbar>
-
-<div class="container">
+<header class="header-bar" id="banner" ng-show="mat.checkHome()">
+  <div class="container">
+    <h2>Ordenes de matrícula</h2>
+    <p class="lead">Para solicitar una orden matrícula llene el <a ui-sref="matricula.crearMatricula"><strong>formulario</strong></a>.  Si desea saber el estado de su orden de matricula, ingrese el número de orden.</p>
+  </div>
+</header>
+<div class="container cr" ng-show="mat.checkHome()">
   <div class="row">
-    <div class="jumbotron card" ng-show="mat.checkHome()">
-      <h1>Ordenes de matrícula</h1>
-      <p>Para solicitar una orden matrícula llene el <a ui-sref="matricula.crearMatricula"><strong>formulario</strong></a>.  Si desea saber el estado de su orden de matricula, ingrese el número de orden.</p>
+    <div class="jumbotron card">
       <div class="input-group input-group-lg">
         <input type="text" placeholder="# de orden" class="form-control" ng-model="id_buscar">
         <span class="input-group-btn"><button type="button" name="button" class="btn btn-default" ui-sref="matricula.detalleMatricula({id: id_buscar})">Buscar</button></span>

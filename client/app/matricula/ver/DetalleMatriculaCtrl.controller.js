@@ -4,6 +4,8 @@
 
   class DetalleMatriculaCtrl {
     constructor($http, $scope, $state, $stateParams, socket, appConfig, Auth) {
+      if ($stateParams.id === "")
+        $state.go('matricula');
       $scope.nivelTitulo = appConfig.nivelTitulo;
       this.isAdmin = Auth.isAdmin;
       this.$stateParams = $stateParams;

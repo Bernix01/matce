@@ -95,7 +95,7 @@
       var flag = true;
       if(this.matricula.fechaNacimiento.getFullYear() - (new Date()).getFullYear() >= 0){
         flag = false;
-        this.errors = this.errors.concat('La matrícula de no nacidos y neonatos no está disponible por el momento.\n\n ');
+        this.errors = this.errors.concat('La matriculación de no nacidos y neonatos no está disponible por el momento.\n\n ');
       }
       if (this.matricula.nombres.split(' ').length != 2) {
         flag = false;
