@@ -7,6 +7,7 @@
     constructor($http, $state, $stateParams, socket, $scope, appConfig) {
       $scope.edit = true;
       $scope.nivelTitulo = appConfig.nivelTitulo;
+      $scope.tiposSangre = appConfig.tiposSangre;
       var self = this;
       this.matricula = {};
       this.errors = '';
@@ -15,6 +16,7 @@
       this.$http = $http;
       this.$state = $state;
       this.date = Date.now();
+      this.otrosConvive = "";
       $scope.fruits = [{
         name: 'Padre',
         selected: true
@@ -77,8 +79,12 @@
       var self = this;
 
       if (form.$valid) {
+        if (this.otrosConvive != "") {
+          this.matricula.personasConvive.push(this.otrosConvive);
+        }
+        this.capitalize();
+
         this.$http.put('/api/ordenMatriculas/' + this.matricula._id, this.matricula).then(function cb(response) {
-          console.log(response.data);
           alert("Orden actualizada con éxito!");
           self.$state.go('matricula.detalleMatricula', {
             id: self.matricula._numOrden
@@ -86,14 +92,30 @@
         }, function errcb(response) {
           console.log(response);
         });
+      }else {
+        this.errors = ":::";
       }
     }
 
+    capitalize() {
+      String.prototype.capitalize = function(lower) {
+      return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+      };
+      console.log(this.matricula.representanteEcon.capitalize(true));
+      this.matricula.nombres = this.matricula.nombres.capitalize(true);
+      this.matricula.apellidos = this.matricula.apellidos.capitalize(true);
+      this.matricula.representante = this.matricula.representante.capitalize(true);
+      this.matricula.nombresPadre = this.matricula.nombresPadre.capitalize(true);
+      this.matricula.apellidosPadre = this.matricula.apellidosPadre.capitalize(true);
+      this.matricula.nombresMadre = this.matricula.nombresMadre.capitalize(true);
+      this.matricula.apellidosMadre = this.matricula.apellidosMadre.capitalize(true);
+      this.matricula.representanteEcon = this.matricula.representanteEcon.capitalize(true);
+    }
 
     valid() {
       this.errors = '';
       var flag = true;
-      if(this.matricula.fechaNacimiento.getFullYear() - (new Date()).getFullYear() >= 0){
+      if (this.matricula.fechaNacimiento.getFullYear() - (new Date()).getFullYear() >= 0) {
         flag = false;
         this.errors = this.errors.concat('La matriculación de no nacidos y neonatos no está disponible por el momento.\n\n ');
       }

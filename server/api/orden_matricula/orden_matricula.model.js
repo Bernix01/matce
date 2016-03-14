@@ -14,7 +14,7 @@ var OrdenMatriculaSchema = new mongoose.Schema({
   },
   _numOrden: String,
   nivel: Number,
-  cedula: String,
+  ID: String,
   nombres: String,
   tipoSangre: String,
   apellidos: String,
@@ -26,7 +26,7 @@ var OrdenMatriculaSchema = new mongoose.Schema({
   anteriorInstitucion: String,
   representante: String,
   representanteParentesco: String,
-  representanteCI: String,
+  representanteID: String,
   telefonosRepresentanteP: String,
   telefonosRepresentanteA: String,
   emailRepresentanteP: String,
@@ -39,23 +39,27 @@ var OrdenMatriculaSchema = new mongoose.Schema({
   lugarTrabajoMadre: String,
   cargoPadre: String,
   cargoMadre: String,
-  nivelPadre: Number,
-  nivelMadre: Number,
-  ciPadre: String,
-  ciMadre: String
+  contactoPadre: String,
+  contactoMadre: String,
+  idPadre: String,
+  idMadre: String,
+  emailRepresentanteEconP: String,
+  telefonoRepresentanteEconP: String,
+  representanteEconID: String,
+  representanteEcon: String
     //,  telefonosContacto: [String]
 });
 
 OrdenMatriculaSchema.virtual('nombreCompleto').get(function() {
-  return this.nombres + " " + this.apellidos;
+  return this.apellidos + " " + this.nombres;
 });
 
 OrdenMatriculaSchema.virtual('nombreCompletoPadre').get(function() {
-  return this.nombresPadre + " " + this.apellidosPadre;
+  return this.apellidosPadre + " " + this.nombresPadre;
 });
 
 OrdenMatriculaSchema.virtual('nombreCompletoMadre').get(function() {
-  return this.nombresMadre + " " + this.apellidosMadre;
+  return this.apellidosMadre + " " + this.nombresMadre;
 });
 
 OrdenMatriculaSchema.virtual('nivelAplica').get(function() {
