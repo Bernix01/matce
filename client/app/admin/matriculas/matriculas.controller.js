@@ -38,8 +38,6 @@
         }
 
         $scope.open = function(matricula) {
-          console.log('modal');
-          console.log(matricula);
           var modalInstance = $modal.open({
             animation: true,
             templateUrl: 'app/admin/matriculas/detalle.html',
@@ -50,7 +48,6 @@
               }
             }
           });
-          console.log(modalInstance);
         }
       }
 
