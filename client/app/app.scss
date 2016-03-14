@@ -139,10 +139,10 @@ form {
   @extend .card;
   margin: 4em auto;
   padding: 2em 2em 2em 2em;
-  .form-group{
-    margin-bottom: 45px;
+  .checkbox-inline{
+    min-width: 130px;
+    margin-left: 10px;
   }
-
   h1{
     margin-top: 0;
     margin-bottom: 20px;

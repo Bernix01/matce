@@ -14,6 +14,7 @@ module.exports = function(config) {
       // bower:js
       'client/bower_components/jquery/dist/jquery.js',
       'client/bower_components/angular/angular.js',
+      'client/bower_components/bootstrap/dist/js/bootstrap.js',
       'client/bower_components/angular-resource/angular-resource.js',
       'client/bower_components/angular-cookies/angular-cookies.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
@@ -23,6 +24,9 @@ module.exports = function(config) {
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/bower_components/angular-validation-match/dist/angular-validation-match.min.js',
       'client/bower_components/ng-page-title/dist/ng-page-title.min.js',
+      'client/bower_components/file-saver.js/FileSaver.js',
+      'client/bower_components/dropdown.js/jquery.dropdown.js',
+      'client/bower_components/snackbarjs/dist/snackbar.min.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

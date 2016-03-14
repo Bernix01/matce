@@ -18,4 +18,7 @@ angular.module('matriculasApp', [
     $urlRouterProvider
       .otherwise('/404.html');
     $locationProvider.html5Mode(true);
+    String.prototype.capitalize = function(lower) {
+    return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+    };
   });
