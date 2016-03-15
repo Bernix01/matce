@@ -1,18 +1,129 @@
 <div class="row bar hidden-print">
-    <div class="status col-md-5">
-      <span class="label label-primary">Total
-        <span class="badge">{{ (vm.matriculas).length }}</span>
-      </span>
-      <span class="label label-success">Canceladas
-        <span class="badge">{{ (vm.matriculas |filter: activeFilter).length }}</span>
-      </span>
-      <span class="label label-warning">No canceladas
-        <span class="badge">{{ (vm.matriculas |filter: !activeFilter).length }}</span>
-      </span>
+  <div class="status col col-sm-12 col-md-5">
+    <span class="label label-primary">Total
+      <span class="badge">{{ (vm.matriculas).length }}</span>
+    </span>
+    <span class="label label-success">Canceladas
+      <span class="badge">{{ (vm.matriculas |filter: activeFilter).length }}</span>
+    </span>
+    <span class="label label-warning">No canceladas
+      <span class="badge">{{ (vm.matriculas |filter: !activeFilter).length }}</span>
+    </span>
+  </div>
+  <div class="controls col col-sm-2  pull-right">
+    <div class="btn-group pull-right" uib-dropdown auto-close="disabled">
+      <button id="split-button" type="button"  onClick="window.print()" class="btn btn-info"><i class="fa fa-print"></i> Imprimir</button>
+      <button type="button" class="btn btn-info" uib-dropdown-toggle>
+        <span class=" fa fa-ellipsis-v"></span>
+        <span class="sr-only">opciones</span>
+      </button>
+      <ul uib-dropdown-menu role="menu" aria-labelledby="split-button">
+        <li role="menuitem">
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.nivelAplica" checked>
+              Nivel al que aplica
+            </label>
+          </div>
+        </li>
+        <li role="menuitem">
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.ID" checked>
+              Identificación
+            </label>
+          </div>
+        </li>
+        <li role="menuitem">
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.fechaNacimiento" checked>
+              Fecha de nacimiento
+            </label>
+          </div>
+        </li>
+        <li role="menuitem">
+        <div class='checkbox-inline'>
+          <label>
+            <input type='checkbox' ng-model="printOpts.sexo" checked>
+            Sexo
+          </label>
+        </div>
+        </li>
+        <li role="menuitem">
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.anteriorInstitucion" checked>
+              Anterior institución
+            </label>
+          </div>
+        </li>
+        <li>
+
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.tipoSangre" checked>
+              Tipo de sangre
+            </label>
+          </div>
+        </li>
+        <li>
+
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.representante" checked>
+              Nombre de representante
+            </label>
+          </div>
+        </li>
+        <li>
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.idRepresentante" checked>
+              Identificación representante
+            </label>
+          </div>
+        </li>
+        <li>
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.telsRepresentante" checked>
+              Teléfonos representante
+            </label>
+          </div>
+        </li>
+        <li>
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.emailRepresentante" checked>
+              Correos representante
+            </label>
+          </div>
+        </li>
+        <li>
+
+          <div class='checkbox-inline'>
+            <label>
+              <input type='checkbox' ng-model="printOpts.estado" checked>
+              Estado
+            </label>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="controls col-sm-1 pull-right">
-      <i class="fa fa-print fa-lg view pull-right" onClick="window.print()"></i>
-    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col col-sm-12 opts pull-right" ng-show="toggleOpts">
+
+  </div>
 </div>
 <div class="row hidden-print">
   <div class="form-group col-md-4 ">
@@ -36,7 +147,7 @@
       <h2 class="card__title">{{matricula.nombreCompleto}}</h2>
       <span class="card__subtitle">{{matricula.nivelAplica}}</span>
       <p class="card__text">
-        <strong>Cédula:</strong>{{matricula.cedula}}<br>
+        <strong>Cédula:</strong>{{matricula.ID}}<br>
         <strong>Padre:</strong>{{matricula.nombreCompletoPadre}}<br>
         <strong>Madre:</strong>{{matricula.nombreCompletoMadre}}<br>
       </p>
@@ -63,13 +174,13 @@
     <div class="table-row">
       <div class="table-cell">Nombres y appellidos</div>
       <div class="table-cell" ng-show="printOpts.nivelAplica">Año</div>
-      <div class="table-cell" ng-show="printOpts.cedula">Cédula</div>
+      <div class="table-cell" ng-show="printOpts.ID">Cédula</div>
       <div class="table-cell" ng-show="printOpts.fechaNacimiento">Fecha de nacimiento</div>
       <div class="table-cell" ng-show="printOpts.tipoSangre">Tipo de sangre</div>
       <div class="table-cell" ng-show="printOpts.sexo">Sexo</div>
       <div class="table-cell" ng-show="printOpts.anteriorInstitucion">Anterior institución</div>
       <div class="table-cell" ng-show="printOpts.representante">Representante</div>
-      <div class="table-cell" ng-show="printOpts.ciRepresentante">Cédula representante</div>
+      <div class="table-cell" ng-show="printOpts.idRepresentante">Cédula representante</div>
       <div class="table-cell" ng-show="printOpts.telsRepresentante">Teléfonos representante</div>
       <div class="table-cell" ng-show="printOpts.emailRepresentante">Emails representante</div>
       <div class="table-cell" ng-show="printOpts.estado">Cancelado</div>
@@ -77,13 +188,13 @@
     <div class="table-row" ng-repeat="matricula in vm.matriculas | filter: filtro">
       <div class="table-cell">{{matricula.nombreCompleto}}</div>
       <div class="table-cell" ng-show="printOpts.nivelAplica">{{matricula.nivelAplica}}</div>
-      <div class="table-cell" ng-show="printOpts.cedula">{{matricula.cedula}}</div>
+      <div class="table-cell" ng-show="printOpts.ID">{{matricula.ID}}</div>
       <div class="table-cell" ng-show="printOpts.fechaNacimiento">{{matricula.fechaNacimiento | date:'yyyy/MM/dd'}}</div>
       <div class="table-cell" ng-show="printOpts.sexo">{{matricula.sexo}}</div>
       <div class="table-cell" ng-show="printOpts.tipoSangre">{{matricula.tipoSangre}}</div>
       <div class="table-cell" ng-show="printOpts.anteriorInstitucion">{{matricula.anteriorInstitucion}}</div>
       <div class="table-cell" ng-show="printOpts.representante">{{matricula.representante}}</div>
-      <div class="table-cell" ng-show="printOpts.ciRepresentante">{{matricula.representanteCI}}</div>
+      <div class="table-cell" ng-show="printOpts.idRepresentante">{{matricula.representanteCI}}</div>
       <div class="table-cell" ng-show="printOpts.telsRepresentante">
         <span>{{matricula.telefonosRepresentanteP}}</span><br>
         <span>{{matricula.telefonosRepresentanteA}}</span>

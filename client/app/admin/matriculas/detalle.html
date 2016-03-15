@@ -53,6 +53,24 @@
       <h5>
         <strong>Anterior institución:</strong>
         {{matricula.anteriorInstitucion}}</h5>
+        <h5>
+          <strong>Identificación:</strong>
+          {{matricula.ID}}</h5>
+        <h5>
+          <strong>Nivel al que aplica:</strong>
+          {{matricula.nivelAplica}}</h5>
+
+        <h5>
+          <strong>Personas con quien convive:</strong>
+          <br>
+          <ul>
+          <li ng-repeat="persona in matricula.personasConvive">
+          {{persona}}</li>
+          </ul></h5>
+
+          <h3>
+            Representante Escolar
+          </h3>
       <h5>
         <strong>Representante:</strong>
         {{matricula.representante}}</h5>
@@ -60,17 +78,12 @@
         <strong>Parentesco:</strong>
         {{matricula.representanteParentesco}}</h5>
       <h5>
-        <strong>Cédula representante:</strong>
-        {{matricula.representanteCI}}</h5>
+        <strong>Identificación representante:</strong>
+        {{matricula.representanteID}}</h5>
       <h5>
         <strong>Correo electrónico del representante:</strong>
         {{matricula.emailRepresentante}}</h5>
-      <h5>
-        <strong>Cedula:</strong>
-        {{matricula.cedula}}</h5>
-      <h5>
-        <strong>Nivel al que aplica:</strong>
-        {{matricula.nivelAplica}}</h5>
+
     </div>
     <div>
       <h3>
@@ -84,10 +97,10 @@
         {{matricula.lugarTrabajoPadre}}</h5>
       <h5>
         <strong>Cedula:</strong>
-        {{matricula.ciPadre}}</h5>
+        {{matricula.idPadre}}</h5>
       <h5>
-        <strong>Nivel de educación:</strong>
-        {{nivelTitulo[matricula.nivelPadre]}}</h5>
+        <strong>Teléfono:</strong>
+        {{matricula.contactoPadre}}</h5>
     </div>
     <div>
       <h3>
@@ -101,11 +114,29 @@
         {{matricula.lugarTrabajoMadre}}</h5>
       <h5>
         <strong>Cedula:</strong>
-        {{matricula.ciMadre}}</h5>
+        {{matricula.idMadre}}</h5>
       <h5>
-        <strong>Nivel de educación:</strong>
-        {{nivelTitulo[matricula.nivelMadre]}}</h5>
+        <strong>Contacto Madre:</strong>
+        {{matricula.contactoMadre}}</h5>
     </div>
+    <div>
+
+              <hr>
+              <h3>Facturación</h3>
+              <h5>
+                <strong>Nombre:</strong>
+                {{matricula.representanteEcon}}</h5>
+              <h5>
+                <strong>RUC/CC:</strong>
+                {{matricula.representanteEconID}}</h5>
+              <h5>
+                <strong>Dirección:</strong>
+                {{matricula.representanteEconDir}}</h5>
+              <h5>
+                <strong>Correo electrónico:</strong>
+                {{matricula.emailRepresentanteEconP}}</h5>
+              <h5>
+              </div>
   </div>
   <div ng-hide="matricula">
     <p>

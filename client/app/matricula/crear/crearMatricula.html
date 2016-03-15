@@ -28,13 +28,17 @@
               </div>
               <div class="form-group col-md-2">
                 <label >Identificación</label>
-                <input type="text" name="id" ng-minlength="9"  ng-required="true" placeholder="PASAPORTE / CI" class="form-control" ng-model="vm.matricula.ID" required>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" uib-tooltip="Seleccione si posee pasaporte" aria-label="" ng-model="mE">
+                  </span>
+                  <input type="text" name="idm" ng-required="true" placeholder="{{mE ? 'Pasaporte' : 'Cédula'}}" class="form-control" ng-model="vm.matricula.ID" required>
+                </div>
               </div>
               <div class="form-group col-md-2">
                 <label >Fecha de nacimiento</label>
                 <input type="date" name="fn" id="fn" class="form-control" ng-model="vm.matricula.fechaNacimiento" required>
               </div>
-
               <div class="form-group col-md-6">
                 <label >Lugar de nacimiento</label>
                 <input type="text" name="ln" class="form-control" ng-model="vm.matricula.lugarNacimiento" required>
@@ -52,7 +56,7 @@
               </div>
               <div class="form-group col-md-2">
                 <label >Año
-                  <i class="fa fa-question-circle" tooltip="Año al que aplica"></i>
+                  <i class="fa fa-question-circle" uib-tooltip="Año al que aplica"></i>
                 </label>
                 <select ng-model="vm.matricula.nivel" class="form-control" name="nea" ng-options="nivelesDisponibles.indexOf(selectedItem3) as selectedItem3 for selectedItem3 in nivelesDisponibles" required></select>
               </div>
@@ -72,7 +76,7 @@
                     {{fruit.name}}
                   </label>
                   <br>
-                  <input type="text" placeholder="Otras personas con quien convive" name="pco" class="form-control" ng-model="vm.otrosConvive" ng-show="fruits[fruits.length - 1].selected" >
+                  <input type="text" placeholder="Otras personas con quien convive" name="pco" class="form-control" ng-model="vm.otrosConvive" ng-show="fruits[fruits.length - 1].selected">
                 </div>
               </div>
 
@@ -94,7 +98,12 @@
 
               <div class="form-group col-sm-3">
                 <label >Identificación</label>
-                <input type="" name="idr" ng-minlength="9"  ng-required="true"  placeholder="PASAPORTE / CI" class="form-control" ng-model="vm.matricula.representanteID" required>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" uib-tooltip="Seleccione si posee pasaporte" aria-label="" ng-model="mR">
+                  </span>
+                  <input type="text" name="idm" ng-required="true" placeholder="{{mR ? 'Pasaporte' : 'Cédula'}}" class="form-control" ng-model="vm.matricula.representanteID" required>
+                </div>
               </div>
 
               <div class="form-group col-sm-3">
@@ -111,16 +120,22 @@
                 <input type="email" name="era" class="form-control" ng-model="vm.matricula.emailRepresentanteA" placeholder="Opcional">
               </div>
               <h2 class="col-sm-12">Representante económico
-                <i class="fa fa-question-circle" tooltip="Estos datos
+                <i class="fa fa-question-circle" uib-tooltip="Estos datos
               coresponden a los de facturación."></i>
               </h2>
               <div class="form-group col-md-9">
-                <label >Nombre completo</label>
+                <label >Nombre
+                </label>
                 <input type="text" name="ncre" class="form-control" ng-model="vm.matricula.representanteEcon" required>
               </div>
               <div class="form-group col-sm-3">
                 <label >Identificación</label>
-                <input type="" name="idre" class="form-control" ng-minlength="10"  ng-required="true" placeholder="RUC/CI" ng-model="vm.matricula.representanteEconID" required>
+                <input type="" name="idre" class="form-control" ng-required="true" placeholder="RUC/CC" ng-model="vm.matricula.representanteEconID" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label >Dirección
+                </label>
+                <input type="text" name="ncre" class="form-control" ng-model="vm.matricula.representanteEconDir" required>
               </div>
               <div class="form-group col-sm-3">
                 <label >Teléfono</label>
@@ -152,7 +167,13 @@
               </div>
               <div class="form-group col-md-5">
                 <label >Identificación</label>
-                <input type="text" name="idp" ng-minlength="9"  ng-required="true" placeholder="PASAPORTE / CI" class="form-control" ng-model="vm.matricula.idPadre" required>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" uib-tooltip="Seleccione si posee pasaporte" aria-label="" ng-model="mP">
+                  </span>
+                  <input type="text" name="idm" ng-required="true" placeholder="{{mP ? 'Pasaporte' : 'Cédula'}}" class="form-control" ng-model="vm.matricula.idPadre" required>
+                </div>
+                <!-- /input-group -->
               </div>
               <div class="form-group col-md-7">
                 <label >Cargo que ocupa</label>
@@ -183,7 +204,13 @@
               </div>
               <div class="form-group col-md-5">
                 <label >Identificación</label>
-                <input type="text" name="idm" ng-minlength="9"  ng-required="true" placeholder="PASAPORTE / CI" class="form-control" ng-model="vm.matricula.idMadre" required>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" uib-tooltip="Seleccione si posee pasaporte" aria-label="" ng-model="mC">
+                  </span>
+                  <input type="text" name="idm" ng-required="true" placeholder="{{mC ? 'Pasaporte' : 'Cédula'}}" class="form-control" ng-model="vm.matricula.idMadre" required>
+                </div>
+                <!-- /input-group -->
               </div>
               <div class="form-group col-md-7">
                 <label >Cargo que ocupa</label>

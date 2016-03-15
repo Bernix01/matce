@@ -3,7 +3,7 @@
 (function() {
 
     class MatriculasCtrl {
-      constructor($http, socket, appConfig, $scope, $modal) {
+      constructor($http, socket, appConfig, $scope, $uibModal) {
         this.$http = $http;
         var self = this;
         $scope.date = new Date();
@@ -20,25 +20,26 @@
         $scope.activeFilter = function(input) {
           return input.active;
         }
+        $scope.toggleOpts = false;
         $scope.currentPage = 1;
         $scope.entryLimit = 9;
         $scope.noOfPages = 5;
         $scope.printOpts = {
           nivelAplica: true,
-          cedula: true,
+          ID: true,
           fechaNacimiento: false,
           sexo: false,
           anteriorInstitucion: false,
           tipoSangre: false,
           representante: true,
-          ciRepresentante: true,
+          idRepresentante: true,
           telsRepresentante: true,
           emailRepresentante: true,
           estado: true
         }
 
         $scope.open = function(matricula) {
-          var modalInstance = $modal.open({
+          var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'app/admin/matriculas/detalle.html',
             controller: 'DetalleMatriculaAdminCtrl',

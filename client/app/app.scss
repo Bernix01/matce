@@ -3,19 +3,16 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 @import '../bower_components/sass-material-colors/sass/sass-material-colors';
-
 /**
  * App-wide vars
  */
-
- $accent_color: material-color('teal', 'a700');
- $secondary_color: material-color('orange','500');
- $primary_color: material-color('teal','500');
- $primary_color_light: material-color('teal','300');
- $primary_color_dark: material-color('teal','700');
- $white: material-color('grey','50');
- $black: #636363;
-
+$accent_color: material-color('teal', 'a700');
+$secondary_color: material-color('orange','500');
+$primary_color: material-color('teal','500');
+$primary_color_light: material-color('teal','300');
+$primary_color_dark: material-color('teal','700');
+$white: material-color('grey','50');
+$black: #636363;
 /**
  * App-wide fn
  */
@@ -27,8 +24,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
     @return $white; // Darker background, return light color
   }
 }
-
-$primary_color_text : color-contrast($primary_color);
+$primary_color_text: color-contrast($primary_color);
 /**
  * App-wide Styles
  */
@@ -38,26 +34,34 @@ $primary_color_text : color-contrast($primary_color);
   color: #000;
   padding: 0.2em 0;
 }
-html,body {
+.dropdown-menu > li {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857;
+    color: #333333;
+    white-space: nowrap;
+}
+html,
+body {
   background-color: #eee;
   color: $black;
   height: 100%;
 }
-
-h1{
+h1 {
   color: $primary_color;
 }
-
-a{
+a {
   color: $accent_color;
-  &:hover{
+  &:hover {
     color: lighten($accent_color,5%);
     text-decoration: none;
   }
-  &:active{
+  &:active {
     color: lighten($accent_color,10%);
   }
-  &:focus{
+  &:focus {
     color: lighten($accent_color,5%);
     outline: none;
     text-decoration: none;
@@ -73,8 +77,9 @@ a{
 }
 .pagination {
   color: $accent_color !important;
-  >li{
-    >a,>span{
+  >li {
+    >a,
+    >span {
       color: $accent_color;
     }
   }
@@ -82,24 +87,23 @@ a{
 .navbar-bro {
   background-color: $primary_color;
   border: none;
-  .navbar-brand{
-    img{
+  .navbar-brand {
+    img {
       height: 20px;
     }
   }
-  .navbar-text{
+  .navbar-text {
     color: $primary_color_text;
   }
-  .navbar-toggle{
-    .icon-bar{
+  .navbar-toggle {
+    .icon-bar {
       background-color: $primary_color_text;
     }
   }
-
   .navbar-brand {
     color: $primary_color_text;
-    &:hover{
-        color: lighten($primary_color_text,30%);
+    &:hover {
+      color: lighten($primary_color_text,30%);
     }
   }
   .navbar-nav {
@@ -127,31 +131,25 @@ a{
 .panel {
   background-color: $white !important;
 }
-
-.card{
+.card {
   border-radius: 0 !important;
   background: #fafafa !important;
   border: 1px solid #ebebeb !important;
-  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px !important;
+  box-shadow: rgba(0,0,0,0.14902) 0 1px 1px 0px,rgba(0,0,0,0.09804) 0 1px 2px 0 !important;
 }
-
 form {
   @extend .card;
   margin: 4em auto;
-  padding: 2em 2em 2em 2em;
-  .checkbox-inline{
+  padding: 2em;
+  .checkbox-inline {
     min-width: 130px;
     margin-left: 10px;
   }
-  h1{
+  h1 {
     margin-top: 0;
     margin-bottom: 20px;
   }
-
 }
-
-
-
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';

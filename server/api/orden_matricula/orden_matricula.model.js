@@ -46,7 +46,8 @@ var OrdenMatriculaSchema = new mongoose.Schema({
   emailRepresentanteEconP: String,
   telefonoRepresentanteEconP: String,
   representanteEconID: String,
-  representanteEcon: String
+  representanteEcon: String,
+  representanteEconDir: String
     //,  telefonosContacto: [String]
 });
 
