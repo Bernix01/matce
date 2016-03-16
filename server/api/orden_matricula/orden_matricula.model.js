@@ -25,6 +25,8 @@ var OrdenMatriculaSchema = new mongoose.Schema({
   personasConvive: [String],
   anteriorInstitucion: String,
   representante: String,
+  paralelo: String,
+  provinciaNacimiento: String,
   representanteParentesco: String,
   representanteID: String,
   telefonosRepresentanteP: String,

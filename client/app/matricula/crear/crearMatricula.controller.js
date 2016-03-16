@@ -7,6 +7,11 @@
     constructor($http, $state, $scope, appConfig) {
       $scope.nivelTitulo = appConfig.nivelTitulo;
       $scope.tiposSangre = appConfig.tiposSangre;
+      $scope.provincias = appConfig.provincias;
+      $scope.mE = false;
+      $scope.mC = false;
+      $scope.mP = false;
+      $scope.mR = false;
       var self = this;
       this.matricula = {};
       this.errors = '';
@@ -79,6 +84,7 @@
         if (this.otrosConvive != "") {
           this.matricula.personasConvive.push(this.otrosConvive);
         }
+        this.capitalize();
         this.$http.post('/api/ordenMatriculas', this.matricula).then(function cb(response) {
           _self.$state.go('matricula.detalleMatricula', {
             id: response.data._numOrden
@@ -90,6 +96,22 @@
       }
     }
 
+    capitalize() {
+      String.prototype.capitalize = function(lower) {
+        return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) {
+          return a.toUpperCase();
+        });
+      };
+      console.log(this.matricula.representanteEcon.capitalize(true));
+      this.matricula.nombres = this.matricula.nombres.capitalize(true);
+      this.matricula.apellidos = this.matricula.apellidos.capitalize(true);
+      this.matricula.representante = this.matricula.representante.capitalize(true);
+      this.matricula.nombresPadre = this.matricula.nombresPadre.capitalize(true);
+      this.matricula.apellidosPadre = this.matricula.apellidosPadre.capitalize(true);
+      this.matricula.nombresMadre = this.matricula.nombresMadre.capitalize(true);
+      this.matricula.apellidosMadre = this.matricula.apellidosMadre.capitalize(true);
+      this.matricula.representanteEcon = this.matricula.representanteEcon.capitalize(true);
+    }
 
     valid() {
       this.errors = '';
@@ -98,16 +120,32 @@
         flag = false;
         this.errors = this.errors.concat('\nLa matriculación de no nacidos y neonatos no está disponible por el momento.');
       }
+      if (!this.$scope.mE && this.matricula.ID.length != 10) {
+        flag = false;
+        this.errors = this.errors.concat('\nCédula del estudiante no válida.');
+      }
+      if (!this.$scope.mR && this.matricula.representanteID.length != 10) {
+        flag = false;
+        this.errors = this.errors.concat('\nCédula del estudiante no válida.');
+      }
+      if (!this.$scope.mP && this.matricula.idPadre.length != 10) {
+        flag = false;
+        this.errors = this.errors.concat('\nCédula del padre no válida.');
+      }
+      console.log(this.matricula);
+      console.log(this.matricula.representanteEconID.length);
+      if (this.matricula.representanteEconID.length != 10 && this.matricula.representanteEconID.length != 13) {
+        flag = false;
+        this.errors = this.errors.concat('\nIdentificación del representante económico no válida, ingrese R.U.C. o Cédula.');
+      }
+      if (!this.$scope.mC && this.matricula.idMadre.length != 10) {
+        flag = false;
+        this.errors = this.errors.concat('\nCédula de la madre no válida.');
+      }
       if (this.matricula.nombres.split(' ').length != 2) {
         flag = false;
         this.errors = this.errors.concat('\nNombre del estudiante incompleto, se requieren dos nombres.');
       }
-
-      if (this.representanteEconID.length != 10 || this.representanteEconID.length != 10) {
-        this.errors = this.errors.concat('\nCédula o RUC ingresado no válido.');
-        flag = false;
-      }
-
       if (this.matricula.apellidos.split(' ').length != 2) {
         flag = false;
         this.errors = this.errors.concat('\nApellido del estudiante incompleto, se requieren dos apellidos.');
@@ -115,7 +153,7 @@
 
       if (this.matricula.representante.split(' ').length < 2) {
         flag = false;
-        this.errors = this.errors.concat('\nNombre completo del representante es requerido.');
+        this.errors = this.errors.concat('\nAl menos un nombre y un apellido del representante son requeridos.');
       }
 
       if (this.matricula.nivel === 0 || this.matricula.nivel === 1) {
@@ -135,6 +173,7 @@
       }
       return flag;
     }
+
   }
 
   angular.module('matriculasApp')

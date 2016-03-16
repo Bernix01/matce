@@ -41,6 +41,7 @@
         $scope.open = function(matricula) {
           var modalInstance = $uibModal.open({
             animation: true,
+            size: 'lg',
             templateUrl: 'app/admin/matriculas/detalle.html',
             controller: 'DetalleMatriculaAdminCtrl',
             resolve: {

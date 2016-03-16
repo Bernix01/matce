@@ -1,31 +1,27 @@
-<div class="detalle">
-  <style>
-    @media print {
-      body * {
-        visibility: hidden;
-      }
+<style>
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .detalleAdmin * {
+      visibility: visible;
+    }
+  }
 
-      .detalle * {
-        visibility: visible;
-      }
+</style>
 
-  </style>
-  <div ng-show="matricula">
-    <h1>Orden de matricula
-      {{matricula._numOrden}}
-    </h1>
-    <h2>
-      Emitida el
-      {{matricula.date |  date:'dd/MM/yyyy'}}
-    </h2>
-    <div class="btn-group" ng-show="matricula.isAdmin()">
-      <button class="btn btn-default hidden-print" ui-sref="matricula.editarMatricula({id: matricula._numOrden})">
-        editar
-      </button>
-      <button onclick="window.print()" class="btn btn-default hidden-print">imprimir</button>
-      <button class="btn btn-danger  hidden-print" ng-click="matricula.borrar()">borrar</button>
+<div class="container col-md-12">
+  <div class="row">
+    <div class="detalleAdmin col col-xs-12 col-sm-12">
+      <h1>Orden de matricula
+        {{matricula._numOrden}}
+      </h1>
+      <h2>
+        Emitida el
+        {{matricula.date |  date:'dd/MM/yyyy'}}
+      </h2>
     </div>
-    <div>
+    <div class="detalleAdmin col col-xs-6 col-md-6" ng-show="matricula">
       <h3>
         Estudiante
       </h3>
@@ -46,31 +42,34 @@
         {{matricula.sexo}}</h5>
       <h5>
         <strong>Tipo de sangre:</strong>
-        {{matricula.tipoSangre}}</h5>
+        {{tiposSangre[matricula.tipoSangre]}}</h5>
       <h5>
         <strong>Domicilio:</strong>
         {{matricula.lugarDomicilio}}</h5>
       <h5>
         <strong>Anterior institución:</strong>
         {{matricula.anteriorInstitucion}}</h5>
-        <h5>
-          <strong>Identificación:</strong>
-          {{matricula.ID}}</h5>
-        <h5>
-          <strong>Nivel al que aplica:</strong>
-          {{matricula.nivelAplica}}</h5>
+      <h5>
+        <strong>Identificación:</strong>
+        {{matricula.ID}}</h5>
+      <h5>
+        <strong>Nivel al que aplica:</strong>
+        {{matricula.nivelAplica}}</h5>
 
-        <h5>
-          <strong>Personas con quien convive:</strong>
-          <br>
-          <ul>
+      <h5>
+        <strong>Personas con quien convive:</strong>
+        <br>
+        <ul>
           <li ng-repeat="persona in matricula.personasConvive">
-          {{persona}}</li>
-          </ul></h5>
+            {{persona}}</li>
+        </ul>
+      </h5>
+    </div>
+    <div class="detalleAdmin col col-xs-6 col-md-6">
 
-          <h3>
-            Representante Escolar
-          </h3>
+      <h3>
+        Representante Escolar
+      </h3>
       <h5>
         <strong>Representante:</strong>
         {{matricula.representante}}</h5>
@@ -85,7 +84,7 @@
         {{matricula.emailRepresentante}}</h5>
 
     </div>
-    <div>
+    <div class="detalleAdmin col col-xs-6 col-md-6">
       <h3>
         Padre
       </h3>
@@ -101,8 +100,10 @@
       <h5>
         <strong>Teléfono:</strong>
         {{matricula.contactoPadre}}</h5>
+
     </div>
-    <div>
+    <div class="detalleAdmin col col-xs-6 col-md-6">
+
       <h3>
         Madre
       </h3>
@@ -118,30 +119,28 @@
       <h5>
         <strong>Contacto Madre:</strong>
         {{matricula.contactoMadre}}</h5>
+      <hr>
+
     </div>
-    <div>
-
-              <hr>
-              <h3>Facturación</h3>
-              <h5>
-                <strong>Nombre:</strong>
-                {{matricula.representanteEcon}}</h5>
-              <h5>
-                <strong>RUC/CC:</strong>
-                {{matricula.representanteEconID}}</h5>
-              <h5>
-                <strong>Dirección:</strong>
-                {{matricula.representanteEconDir}}</h5>
-              <h5>
-                <strong>Correo electrónico:</strong>
-                {{matricula.emailRepresentanteEconP}}</h5>
-              <h5>
-              </div>
-  </div>
-  <div ng-hide="matricula">
-    <p>
-      No se ha encontrado ningún resultado.
-    </p>
-
+    <div class="detalleAdmin col col-xs-6 col-xs-offset-6 col-sm-offset-6 col-sm-6">
+      <h3>Facturación</h3>
+      <h5>
+        <strong>Nombre:</strong>
+        {{matricula.representanteEcon}}</h5>
+      <h5>
+        <strong>RUC/CC:</strong>
+        {{matricula.representanteEconID}}</h5>
+      <h5>
+        <strong>Dirección:</strong>
+        {{matricula.representanteEconDir}}</h5>
+      <h5>
+        <strong>Correo electrónico:</strong>
+        {{matricula.emailRepresentanteEconP}}</h5>
+    </div>
+    <div ng-hide="matricula">
+      <p>
+        No se ha encontrado ningún resultado.
+      </p>
+    </div>
   </div>
 </div>

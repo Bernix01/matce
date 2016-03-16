@@ -3,14 +3,15 @@
 class NavbarController {
   //start-non-standard
   menu = [{
-    'title': 'Home',
+    'title': 'Inicio',
     'state': 'main'
   },{
     'title': 'Matriculas',
     'state': 'matricula'
+  },{
+    'title': 'Contacto',
+    'state': 'contacto'
   }];
-
-  isCollapsed = true;
   //end-non-standard
 
   constructor(Auth) {

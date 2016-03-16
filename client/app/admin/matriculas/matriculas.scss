@@ -1,6 +1,8 @@
-.detalle{
-  padding: 1em;
-  background: #fff;
+.modal-content{
+  overflow: auto;
+  .container{
+    padding: .3em 2em 1em 2em;
+  }
 }
 .admin {
   .status{

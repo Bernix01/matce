@@ -39,9 +39,14 @@
                 <label >Fecha de nacimiento</label>
                 <input type="date" name="fn" id="fn" class="form-control" ng-model="vm.matricula.fechaNacimiento" required>
               </div>
+              <div class="form-group col-sm-6 col-md-2" ng-show="!mE">
+                <label >Provincia</label>
+                <select ng-model="vm.matricula.provinciaNacimiento" class="form-control" name="nts" ng-options="provincias.indexOf(selectedItem5) as selectedItem5 for selectedItem5 in provincias" ng-required="!mE"></select>
+              </div>
               <div class="form-group col-md-6">
                 <label >Lugar de nacimiento</label>
                 <input type="text" name="ln" class="form-control" ng-model="vm.matricula.lugarNacimiento" required>
+                <p class="help-block">Cantón, sector.</p>
               </div>
               <div class="form-group col-sm-6 col-md-2">
                 <label >Sexo</label>
@@ -52,7 +57,12 @@
               </div>
               <div class="form-group col-sm-6 col-md-2">
                 <label >Tipo de sangre</label>
-                <select ng-model="vm.matricula.tipoSangre" class="form-control" name="nts" ng-options="nivelesDisponibles.indexOf(selectedItem4) as selectedItem4 for selectedItem4 in tiposSangre" required></select>
+                <select ng-model="vm.matricula.tipoSangre" class="form-control" name="nts" ng-options="tiposSangre.indexOf(selectedItem4) as selectedItem4 for selectedItem4 in tiposSangre" required></select>
+              </div>
+              <div class="form-group clear col-md-9">
+                <label >Dirección de domicilio</label>
+                <input type="text" name="dd" class="form-control" ng-model="vm.matricula.lugarDomicilio" required>
+                <p class="help-block">Ciudad, Sector, manzana y villa.</p>
               </div>
               <div class="form-group col-md-2">
                 <label >Año
@@ -60,12 +70,6 @@
                 </label>
                 <select ng-model="vm.matricula.nivel" class="form-control" name="nea" ng-options="nivelesDisponibles.indexOf(selectedItem3) as selectedItem3 for selectedItem3 in nivelesDisponibles" required></select>
               </div>
-              <div class="form-group clear col-md-9">
-                <label >Dirección de domicilio</label>
-                <input type="text" name="dd" class="form-control" ng-model="vm.matricula.lugarDomicilio" required>
-                <p class="help-block">Ciudad, Sector, manzana y villa.</p>
-              </div>
-
               <div class="form-group col-md-9">
                 <label >
                   Personas con quien convive</label>
@@ -228,11 +232,16 @@
           <pre class="errorMat bg-danger" ng-show="vm.errors">
             {{vm.errors}}
           </pre>
-          <div class="togglebutton">
-            <label ng-show="edit">
+          <div class="togglebutton" ng-show="edit">
+            <label>
               <input type="checkbox" name="activo" ng-model="vm.matricula.active">
               Cancelado?
             </label>
+          </div>
+
+          <div class="form-group col-md-3" ng-show="vm.matricula.active && edit">
+            <label >Paralelo</label>
+            <input type="text" name="name"  class="form-control"  ng-model="vm.matricula.paralelo" placeholder="Paralelo" >
           </div>
           <button class="btn btn-inverse btn-lg btn-matricula pull-right" ng-click="vm.enviar(form)">
             Enviar

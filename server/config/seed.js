@@ -102,7 +102,7 @@ User.find({}).removeAsync()
       lugarTrabajoMadre: "Enterprise",
       apellidosMadre: "Mancero Reyes",
       nivel: 1,
-      cedula: "0948124578"
+      ID: "0948124578"
     },
     {
       "nombres": "Alejandro Daniel",
@@ -144,7 +144,7 @@ User.find({}).removeAsync()
   {
     "nombres": "Alejandro Daniel",
     "apellidos": "Muñoz Rockefeller",
-    "cedula": "0923763184",
+    "ID": "0923763184",
     "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
     "lugarNacimiento": "Ernesto Maldonado",
     "sexo": "M",
@@ -181,7 +181,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -218,7 +218,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -255,7 +255,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -292,7 +292,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -329,7 +329,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -366,7 +366,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -403,7 +403,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -440,7 +440,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -477,7 +477,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -514,7 +514,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -551,7 +551,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -588,7 +588,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -625,7 +625,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -662,7 +662,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -699,7 +699,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -736,7 +736,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -773,7 +773,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -810,7 +810,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -847,7 +847,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -884,7 +884,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -921,7 +921,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -958,7 +958,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -995,7 +995,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -1032,7 +1032,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -1069,7 +1069,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -1106,7 +1106,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",
@@ -1143,7 +1143,7 @@ User.find({}).removeAsync()
 {
   "nombres": "Alejandro Daniel",
   "apellidos": "Muñoz Rockefeller",
-  "cedula": "0923763184",
+  "ID": "0923763184",
   "fechaNacimiento": new Date("2000-02-10T05:00:00.000Z"),
   "lugarNacimiento": "Ernesto Maldonado",
   "sexo": "M",

@@ -7,6 +7,7 @@
     constructor($http, $state, $stateParams, socket, $scope, appConfig) {
       $scope.edit = true;
       $scope.nivelTitulo = appConfig.nivelTitulo;
+      $scope.provincias = appConfig.provincias;
       $scope.tiposSangre = appConfig.tiposSangre;
       $scope.mE = false;
       $scope.mC = false;
