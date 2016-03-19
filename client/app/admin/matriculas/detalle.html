@@ -29,11 +29,19 @@
         <strong>Nombre:</strong>
         {{matricula.nombreCompleto}}</h5>
       <h5>
+      <h5 ng-show="matricula.paralelo">
+        <strong>Paralelo:</strong>
+        {{matricula.paralelo}}</h5>
+      <h5>
         <strong>Cancelado:</strong>
         {{matricula.active ? 'Sí' : 'No'}}</h5>
       <h5>
         <strong>Fecha de nacimiento:</strong>
         {{matricula.fechaNacimiento |  date:'dd/MM/yyyy'}}</h5>
+      <h5 ng-show="matricula.ID.length === 10">
+        <strong>Provincia:</strong>
+        {{matricula.provinciaNacimiento}}</h5>
+      <h5>
       <h5>
         <strong>Lugar de nacimiento:</strong>
         {{matricula.lugarNacimiento}}</h5>

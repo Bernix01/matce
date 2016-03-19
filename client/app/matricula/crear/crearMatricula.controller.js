@@ -5,8 +5,6 @@
   class CrearMatriculaCtrl {
 
     constructor($http, $state, $scope, appConfig) {
-      $scope.nivelTitulo = appConfig.nivelTitulo;
-      $scope.tiposSangre = appConfig.tiposSangre;
       $scope.provincias = appConfig.provincias;
       $scope.mE = false;
       $scope.mC = false;
@@ -52,8 +50,10 @@
       }];
       $scope.selectedItem = 0;
       $scope.selectedItem2 = 0;
+      $scope.selectedItem4 = 0;
 
       $scope.nivelesDisponibles = appConfig.nivelesDisponibles;
+        $scope.tiposSangre = appConfig.tiposSangre;
 
       // selected fruits
       $scope.selection = [];

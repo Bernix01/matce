@@ -32,6 +32,7 @@
           anteriorInstitucion: false,
           tipoSangre: false,
           representante: true,
+          paralelo: false,
           idRepresentante: true,
           telsRepresentante: true,
           emailRepresentante: true,
